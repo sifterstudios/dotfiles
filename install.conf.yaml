@@ -1,0 +1,41 @@
+- clean: ['~']
+
+- link:
+    ~/.profile: profile
+    ~/.bashrc: bashrc
+    ~/.bash_logout: bash_logout
+    ~/.gitconfig: gitconfig
+    ~/.xprofile: xprofile
+    ~/.p10k.zsh: p10k.zsh
+    ~/.config/awesome:
+        path: config/awesome/
+        create: true
+    ~/.config/picom:
+        path: config/picom/
+        create: true
+    ~/.config/nvim:
+        path: config/nvim/
+        create: true
+    ~/.config/rofi:
+        path: config/rofi/
+        create: true
+    ~/.config/ulauncher/extensions.json:
+        path: config/ulauncher/extensions.json
+        create: true
+    ~/.config/ulauncher/settings.json:
+        path: config/ulauncher/settings.json
+        create: true
+    ~/.config/ulauncher/shortcuts.json:
+        path: config/ulauncher/shortcuts.json
+        create: true
+    ~/.config/btop:
+        path: config/btop/
+        create: true
+    ~/.config/espanso:
+        path: config/espanso/
+        create: true
+    ~/.config/kitty:
+        path: config/kitty/
+        create: true
+
+
