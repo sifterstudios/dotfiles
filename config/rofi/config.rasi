@@ -4,4 +4,4 @@ configuration {
   show-icons:         true;
   icon-theme:         "Papirus";
 }
-@import "~/.config/awesome/themes/multicolor/sidebar.rasi"
+@import "/home/sifter/.config/awesome/theme/sidebar.rasi"

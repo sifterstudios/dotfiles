@@ -5,7 +5,8 @@ plugins=(git kubectl history emoji encode64 zsh-autosuggestions)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-. /home/sifter/.config/nvim/scripts/z
+# . /home/sifter/.config/scripts/z
+export PATH=$PATH:$HOME/picom
 export ZSH="$HOME/.oh-my-zsh"
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
