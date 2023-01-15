@@ -41,9 +41,7 @@
     ~/.config/kitty:
         path: config/kitty/
         create: true
-    ~/.config/scripts:
-        path: config/scripts/
-        create: true
+
 # - shell:
 
 # - create:
