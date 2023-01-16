@@ -38,7 +38,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 source $ZSH/oh-my-zsh.sh
-
+source "$HOME/.xprofile"
 
 
 

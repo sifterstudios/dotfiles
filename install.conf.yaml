@@ -4,8 +4,55 @@
     ~/.vimrc: vimrc
     ~/.Xresources: Xresources
     ~/.xinitrc: xinitrc
+    ~/.gitconfig: gitconfig
+    ~/.p10k.zsh: p10k.zsh
+    ~/.profile: profile
+    ~/.xprofile: xprofile
+    ~/.zshrc: zshrc
+    ~/.bashrc: bashrc
+    ~/.bash_logout: bash_logout
+    ~/.config/yakuakerc: config/yakuakerc
+    ~/.config/kglobalshortcutsrc: config/kglobalshortcutsrc
+    ~/.config/VSCodium/User/settings.json: config/VSCodium/User/settings.json
+    ~/.config/ulauncher/extensions.json: config/ulauncher/extensions.json
+    ~/.config/ulauncher/settings.json: config/ulauncher/settings.json
+    ~/.config/ulauncher/shortcuts.json: config/ulauncher/shortcuts.json
     ~/.config/i3:
         path: config/i3/
         create: true
-
-
+    ~/.config/kitty:
+        path: config/kitty/
+        create: true
+    ~/.config/btop:
+        path: config/btop/
+        create: true
+    ~/.config/dconf:
+        path: config/dconf/
+        create: true
+    ~/.config/nvim:
+        path: config/nvim/
+        create: true
+    ~/.config/rofi:
+        path: config/rofi/
+        create: true
+    ~/.config/picom:
+        path: config/picom/
+        create: true
+    ~/.config/espanso:
+        path: config/espanso/
+        create: true
+    ~/.config/neofetch:
+        path: config/neofetch/
+        create: true
+    ~/.config/pop-shell:
+        path: config/pop-shell/
+        create: true
+    ~/.config/scripts:
+        path: config/scripts/
+        create: true
+    ~/.config/polybar:
+        path: config/polybar/
+        create: true
+    ~/.config/ttyper:
+        path: config/ttyper/
+        create: true
