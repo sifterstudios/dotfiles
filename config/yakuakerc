@@ -2,4 +2,5 @@
 FirstRun=false
 
 [Window]
-Height=41
+Height=10
+Width=100

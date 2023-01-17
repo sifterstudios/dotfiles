@@ -10,6 +10,7 @@
     ~/.xprofile: xprofile
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
+    ~/.tmux.conf: tmux.conf
     ~/.bash_logout: bash_logout
     ~/.config/yakuakerc: config/yakuakerc
     ~/.config/kglobalshortcutsrc: config/kglobalshortcutsrc
