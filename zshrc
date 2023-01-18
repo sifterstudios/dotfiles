@@ -23,7 +23,7 @@ export ANDROID_HOME="/usr/lib/android-sdk/"
 export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
 export PATH=$HOME/Applications/android/emulator:$PATH
 export PATH=$HOME/Applications/android/platform-tools:$PATH
-export PATH=$HOME/.config/nvim/scripts:$PATH
+export PATH=$HOME/.config/scripts:$PATH
 export PATH=$PATH:$HOME/.local/bin
 export DOTNET_ROOT=/snap/dotnet-sdk/current
 export EDITOR=/usr/bin/nvim
@@ -38,7 +38,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.xprofile"
 
 
 

@@ -52,6 +52,11 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Toggle UndoTree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
+-- Remap semicolon to colon in normal mode so you don't need shift for commands
+vim.keymap.set("n", ";", [[:]])
+
+-- Add semicolon if by the off chance I will need it in normal mode
+vim.keymap.set("n", "<leader>;", [[;]])
 -- Harpoon Keymaps
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
