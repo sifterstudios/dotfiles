@@ -1,6 +1,10 @@
-require('tokyonight').setup({
-    disable_background = true
-})
+require("tokyonight").setup {
+    transparent = true,
+    styles = {
+       sidebars = "transparent",
+       floats = "transparent",
+    }
+}
 require('notify').setup({
     background_colour = "#000000",
 })

@@ -110,6 +110,7 @@ _G.packer_plugins = {
     url = "https://github.com/j-hui/fidget.nvim"
   },
   ["friendly-snippets"] = {
+    config = { "\27LJ\2\2X\0\0\3\0\5\0\b6\0\0\0'\1\1\0B\0\2\0029\0\2\0'\1\3\0005\2\4\0B\0\3\1K\0\1\0\1\2\0\0\rreact-ts\btsx\20filetype_extend\fluasnip\frequire\0" },
     loaded = true,
     path = "/home/sifter/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
@@ -258,11 +259,6 @@ _G.packer_plugins = {
     path = "/home/sifter/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
   },
-  ["vim-sleuth"] = {
-    loaded = true,
-    path = "/home/sifter/.local/share/nvim/site/pack/packer/start/vim-sleuth",
-    url = "https://github.com/tpope/vim-sleuth"
-  },
   ["vim-wakatime"] = {
     loaded = true,
     path = "/home/sifter/.local/share/nvim/site/pack/packer/start/vim-wakatime",
@@ -295,6 +291,10 @@ time([[Config for twilight.nvim]], false)
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
+-- Config for: friendly-snippets
+time([[Config for friendly-snippets]], true)
+try_loadstring("\27LJ\2\2X\0\0\3\0\5\0\b6\0\0\0'\1\1\0B\0\2\0029\0\2\0'\1\3\0005\2\4\0B\0\3\1K\0\1\0\1\2\0\0\rreact-ts\btsx\20filetype_extend\fluasnip\frequire\0", "config", "friendly-snippets")
+time([[Config for friendly-snippets]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\2?\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14jump_next\18todo-comments\frequire?\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14jump_prev\18todo-comments\frequireÞ\1\1\0\a\0\r\1\0256\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\3\0006\2\3\0009\2\4\0029\2\5\2'\3\6\0'\4\a\0003\5\b\0005\6\t\0B\2\5\2>\2\1\0016\2\3\0009\2\4\0029\2\5\2'\3\6\0'\4\n\0003\5\v\0005\6\f\0B\2\5\0?\2\0\0B\0\2\1K\0\1\0\1\0\1\tdesc\26Previous todo comment\0\a)t\1\0\1\tdesc\22Next todo comment\0\a(t\6n\bset\vkeymap\bvim\nsetup\18todo-comments\frequire\5€€À™\4\0", "config", "todo-comments.nvim")

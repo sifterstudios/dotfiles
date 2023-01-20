@@ -102,5 +102,14 @@ return function(use)
 	-- Emmet
 	use 'mattn/emmet-vim'
 	-- Friendly snippets
-	use 'rafamadriz/friendly-snippets'
+	use {
+		'rafamadriz/friendly-snippets',
+		config = function()
+			require 'luasnip'.filetype_extend("tsx", { "react-ts" })
+		end
+	}
+	use {
+		'nmac427/guess-indent.nvim',
+		config = function() require('guess-indent').setup {} end,
+	}
 end
