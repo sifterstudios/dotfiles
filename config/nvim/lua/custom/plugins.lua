@@ -6,7 +6,7 @@ return function(use)
 			require("which-key").setup({})
 		end
 	})
-	-- TROUBLE
+		-- TROUBLE
 	use {
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
@@ -61,22 +61,6 @@ return function(use)
 	})
 	-- TOKYONIGHT
 	use 'folke/tokyonight.nvim'
-	-- TODO-COMMENTS
-	use {
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-		config = function()
-			require("todo-comments").setup {
-				vim.keymap.set("n", "(t", function()
-					require("todo-comments").jump_next()
-				end, { desc = "Next todo comment" }),
-
-				vim.keymap.set("n", ")t", function()
-					require("todo-comments").jump_prev()
-				end, { desc = "Previous todo comment" })
-			}
-		end
-	}
 	-- ZEN-MODE
 	use {
 		"folke/zen-mode.nvim",
@@ -95,8 +79,6 @@ return function(use)
 	use('theprimeagen/harpoon')
 	-- UNDOTREE
 	use('mbbill/undotree')
-	-- WAKATIME
-	use 'wakatime/vim-wakatime'
 	-- Codi
 	use 'metakirby5/codi.vim'
 	-- Emmet

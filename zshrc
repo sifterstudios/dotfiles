@@ -5,7 +5,7 @@ plugins=(git kubectl history emoji encode64 zsh-autosuggestions)
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-# . /home/sifter/.config/scripts/z
+# . $HOME/.config/scripts/z
 export PATH=$PATH:$HOME/picom
 export ZSH="$HOME/.oh-my-zsh"
 export GOPATH=$HOME/go
@@ -17,8 +17,6 @@ export PATH="$PATH:$HOME/Applications/android/cmdline-tools/8.0/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export PATH=$PATH:$JAVA_HOME/bin
 export ANDROID_HOME="/usr/lib/android-sdk/"
 export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
 export PATH=$HOME/Applications/android/emulator:$PATH
@@ -31,7 +29,7 @@ export VISUAL=/usr/bin/nvim
 
 # ALIASES
 alias lss='ls -lAFh'
-alias luamake=/home/sifter/.config/lsp/lua-language-server/3rd/luamake/luamake
+alias luamake=$HOME/.config/lsp/lua-language-server/3rd/luamake/luamake
 alias android-studio=$HOME/Applications/android-studio/bin/studio.sh
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -57,6 +55,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /home/sifter/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval $(thefuck --alias)
