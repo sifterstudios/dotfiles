@@ -82,4 +82,103 @@ nmap <leader>gm :action Git.Merge<cr>
 nmap <leader>,a :action GotoAction<cr>
 
 " Errors
+nmap <leader>x :action GotoNextError<cr>
+nmap <leader>X :action GotoPreviousError<cr>
 
+" Refactorings
+vmap T :action Refactorings.QuickListPopupAction<cr>
+vmap <leader>em :action ExtractMethod<cr>
+nmap <leader>er :action RenameElement<cr>
+nmap <leader>eg :action Generate<cr>
+nmap <leader>eI :action OptimizeImports<cr>
+
+"Inspection
+nmap <leader>ec :action InspectCode<cr>
+
+" VCS operations
+nmap <leader>yy :action Vcs.Show.Local.Changes<cr>
+nmap <leader>yp :action Vcs.QuickListPopupAction<cr>
+nmap <leader>ya :action Annotate<cr>
+nmap <leader>yl :action Vcs.Show.Log<cr>
+nmap <leader>yd :action Compare.LastVersion<cr>
+nmap <leader>yP :action Git.Pull<cr>
+nmap <leader>yr :action Git.ResolveConflicts<cr>
+nmap <leader>yo :action Github.Open.In.Browser<cr>
+
+" Terminal
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
+
+" Gradle
+nmap <leader>G :action ActivateGradleToolWindow<cr>
+
+" External nvim
+nmap <leader>v :action Tool_External Tools_nvim<cr>
+
+" IdeaVim uses 'a' for alt instead of Vim's 'm'
+nmap <a-j> 15gj
+nmap <a-k> 15gk
+
+" Won't work in visual mode (with vmap for some reason.
+" Use default map of <c-/> for that.
+nmap gcc :action CommentByLineComment<cr>
+
+" unimpaired mappings
+nnoremap [<space> O<Esc>j
+nnoremap ]<space> o<Esc>k
+nnoremap po :action PreviousOccurence<cr>
+nnoremap no :action NextOccurence<cr>
+nnoremap mp :action MethodUp<cr>
+nnoremap mn :action MethodDown<cr>
+nnoremap pc :action VcsShowPrevChangeMarker<cr>
+nnoremap nc :action VcsShowNextChangeMarker<cr>
+
+" Tabs
+nnoremap sa :action PreviousTab<cr>
+nnoremap as :action NextTab<cr>
+
+" Search
+nmap <leader>/ :action Find<cr>
+nmap <leader>\ :action FindInPath<cr>
+
+" Moving lines
+nmap pe :action MoveLineUp<cr>
+nmap ne :action MoveLineDown<cr>
+
+" Moving statements
+nmap ps :action MoveStatementUp<cr>
+nmap ns :action MoveStatementDown<cr>
+
+" Building, Running, and Debugging
+nmap ,c :action CompilyDirty<cr>
+nmap ,r :action Run<cr>
+nmap ,R :action RunAnything<cr>
+nmap ,b :action Debug<cr>
+nmap ,c :action RunClass<cr>
+nmap ,d :action DebugClass<cr>
+nmap ,t :action RerunTests<cr>
+nmap ,T :action RerunFailedTests<cr>
+nmap ,p :action ToggleLineBreakpoint<cr>
+nmap ,i :action ParameterInfo<cr>
+
+" Useful Quick Actions
+nmap ,, :action QuickJavaDoc<cr>
+nmap ,H :action LocalHistory.ShowHistory<cr>
+nmap ,e :action JumpToLastChange<cr>
+
+" AceJump shortcut
+nmap <leader>j :action AceAction<cr>
+nmap ,yy :action CopySourceRootPath<cr>
+nmap ,ya :action CopyAbsolutePath<cr>
+nmap ,l :action RecentLocations<cr>
+nmap ,S :action ShowProjectStructureSettings<cr>
+
+" Pin/Unpin active tab
+nmap \p :action PinActiveTabToggle<cr>
+
+" Previous Vim File
+nnoremap <BS> <C-S-6>
+nnoremap <leader><leader> <C-S-6>
+
+" Increase or decrease font size
+nnoremap <C-.> :action EditorIncreaseFontSize<cr>
+nnoremap <C-,> :action EditorDecreaseFontSize<cr>
