@@ -1,3 +1,4 @@
+" SETTINGS
 set ignorecase
 set smartcase
 set scrolloff=3 " 3 lines above/below cursor when scrolling
@@ -31,8 +32,8 @@ nmap <leader>, :action CloseContent<cr>
 nmap <leader>< :action ReopenClosedTab<cr>
 
 " To navigate between split panes
-nmap <leader>,r :action NextSplitter<cr>
-nmap <leader>,l :action PrevSplitter<cr>
+nmap <leader>,l :action NextSplitter<cr>
+nmap <leader>,r :action PrevSplitter<cr>
 nmap <leader>wo :action PrevSplitter<cr>
 
 " Full screen window
@@ -167,6 +168,7 @@ nmap ,e :action JumpToLastChange<cr>
 
 " AceJump shortcut
 nmap <leader>j :action AceAction<cr>
+
 nmap ,yy :action CopySourceRootPath<cr>
 nmap ,ya :action CopyAbsolutePath<cr>
 nmap ,l :action RecentLocations<cr>
