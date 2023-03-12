@@ -1,4 +1,20 @@
-
+call plug#begin()
+  Plug 'kana/vim-textobj-user'
+  Plug 'preservim/nerdtree'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'justinmk/vim-sneak'
+  Plug 'tpope/vim-surround'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'tpope/vim-commentary'
+  Plug 'vim-scripts/ReplaceWithRegister'
+  Plug 'tommcdo/vim-exchange'
+  Plug 'kana/vim-textobj-entire'
+  Plug 'machakann/vim-highlightedyank'
+  Plug 'dbakker/vim-paragraph-motion'
+  Plug 'michaeljsmith/vim-indent-object'
+  Plug 'chrisbra/matchit'
+  Plug 'unblevable/quick-scope'
+call plug#end()
 " Don't try to be vi compatible
 set nocompatible
 
@@ -101,6 +117,5 @@ let g:hybrid_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 "colorscheme Tomorrow-Night
-colorscheme Tomorrow-Night
 hi Normal ctermbg=none
 

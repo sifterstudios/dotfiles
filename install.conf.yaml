@@ -19,6 +19,9 @@
     ~/.config/ulauncher/extensions.json: config/ulauncher/extensions.json
     ~/.config/ulauncher/settings.json: config/ulauncher/settings.json
     ~/.config/ulauncher/shortcuts.json: config/ulauncher/shortcuts.json
+    ~/.vim/colors:
+        path: vim/colors/
+        create: true
     ~/.config/i3:
         path: config/i3/
         create: true
