@@ -41,13 +41,13 @@ nmap <leader>,r :action PrevSplitter<cr>
 nmap <leader>,u :action HideAllWindows<cr>
 
 " Splits manipulation
-nmap <leader>,| :action SplitHorizontally<cr>
+nmap <leader>,i :action SplitHorizontally<cr>
 nmap <leader>,- :action SplitVertically<cr>
 nmap <leader>,j :action Unsplit<cr>
 nmap <leader>,J :action UnsplitAll<cr>
 nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
 
-" NERDtree
+" NERDTree
 map <leader>mm :NERDTree<CR>
 map <leader>mu :NERDTreeFind<CR>
 
@@ -56,8 +56,9 @@ map <leader>mu :NERDTreeFind<CR>
 nmap <leader>h :action Back<cr>
 nmap <leader>l :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
-nmap <leader>u :action FindUsages<cr>
+nmap <leader>u :action ShowUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
+nmap <leader>r :action GoToDeclaration<cr>
 nmap <leader>f :action GotoFile<cr>
 nmap <leader>c :action GotoClass<cr>
 nmap <leader>s :action GotoSymbol<cr>
@@ -93,6 +94,9 @@ vmap <leader>em :action ExtractMethod<cr>
 nmap <leader>er :action RenameElement<cr>
 nmap <leader>eg :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
+nmap <leader>ev :action IntroduceVariable<cr>
+nmap <leader>ef :action IntroduceField<cr>
+nmap <leader>et :action IntroduceConstant<cr>
 
 "Inspection
 nmap <leader>ec :action InspectCode<cr>
@@ -111,10 +115,10 @@ nmap <leader>yo :action Github.Open.In.Browser<cr>
 nmap <leader>T :action ActivateTerminalToolWindow<cr>
 
 " Gradle
-nmap <leader>G :action ActivateGradleToolWindow<cr>
+nmap <leader>G :action ActivateMavenToolWindow<cr>
 
 " External nvim
-nmap <leader>v :action Tool_External Tools_nvim<cr>
+nmap <leader>v :action Tool_External Tools_nvim-qt<cr>
 
 " IdeaVim uses 'a' for alt instead of Vim's 'm'
 nmap <a-j> 15gj
@@ -184,7 +188,3 @@ nnoremap <leader><leader> <C-S-6>
 " Increase or decrease font size
 nnoremap <C-.> :action EditorIncreaseFontSize<cr>
 nnoremap <C-,> :action EditorDecreaseFontSize<cr>
-
-" Keep what's stored in the yank - normal copy/paste functionality
-vnoremap y "ky
-vnoremap p "kp
