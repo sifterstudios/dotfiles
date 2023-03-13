@@ -129,18 +129,18 @@ nnoremap [<space> O<Esc>j
 nnoremap ]<space> o<Esc>k
 nnoremap po :action PreviousOccurence<cr>
 nnoremap no :action NextOccurence<cr>
-nnoremap mp :action MethodUp<cr>
-nnoremap mn :action MethodDown<cr>
+nnoremap pm :action MethodUp<cr>
+nnoremap nm :action MethodDown<cr>
 nnoremap pc :action VcsShowPrevChangeMarker<cr>
 nnoremap nc :action VcsShowNextChangeMarker<cr>
 
 " Tabs
 nnoremap sa :action PreviousTab<cr>
-nnoremap as :action NextTab<cr>
+nnoremap ss :action NextTab<cr>
 
 " Search
 nmap <leader>/ :action Find<cr>
-nmap <leader>\ :action FindInPath<cr>
+nmap <leader>? :action FindInPath<cr>
 
 " Moving lines
 nmap pe :action MoveLineUp<cr>
@@ -184,3 +184,7 @@ nnoremap <leader><leader> <C-S-6>
 " Increase or decrease font size
 nnoremap <C-.> :action EditorIncreaseFontSize<cr>
 nnoremap <C-,> :action EditorDecreaseFontSize<cr>
+
+" Keep what's stored in the yank - normal copy/paste functionality
+vnoremap y "ky
+vnoremap p "kp
