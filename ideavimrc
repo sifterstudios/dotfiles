@@ -99,6 +99,8 @@ vmap <leader>em :action ExtractMethod<cr>
 nmap <leader>er :action RenameElement<cr>
 nmap <leader>eg :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
+nmap @ i<cr><Esc>
+nmap <leader>@ kJl
 
 "Inspection
 nmap <leader>ec :action InspectCode<cr>
