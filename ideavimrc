@@ -17,7 +17,7 @@ set ideajoin
 set multiple-cursors
 
 let mapleader = " "
-
+xnoremap p pgvy
 " Map semicolon to colon to not have to use Shift. Lazy dev.
 nmap ; :
 
@@ -35,7 +35,7 @@ nmap <leader>Q :action ReopenClosedTab<cr>
 
 " To navigate between split panes
 nmap <leader>,l :action NextSplitter<cr>
-nmap <leader>,r :action PrevSplitter<cr>
+nmap <leader>,h :action PrevSplitter<cr>
 
 " Full screen window
 nmap <leader>,u :action HideAllWindows<cr>
@@ -74,6 +74,7 @@ nmap <leader>a :action RecentChangedFiles<cr>
 nmap <leader>t :action GotoTest<cr>
 nmap <leader>p :action JumpToLastWindow<cr>
 nmap <leader>B :action ShowBookmarks<cr>
+nmap <leader>o :action ActivateTODOToolWindow<cr>
 
 " Useful Git actions
 nmap <leader>ga :action Git.Branches<cr>
