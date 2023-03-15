@@ -1,11 +1,13 @@
 set ignorecase
 set smartcase
 set scrolloff=3 " 3 lines above/below cursor when scrolling
-set showmode
+
 
 " Emulated plugins
 set surround
-" set easymotion
+set easymotion
+set which-key
+set notimeout
 Plug 'preservim/nerdtree'
 " Copy to system clipboard as well
 set clipboard+=unnamed
@@ -13,8 +15,8 @@ set clipboard+=unnamed
 " Use Idea to join lines smartly
 set ideajoin
 
-" Multiple cursor support
-set multiple-cursors
+", Multiple cursor support
+s,et multiple-cursors
 
 let mapleader = " "
 
@@ -22,12 +24,16 @@ let mapleader = " "
 nmap ; :
 
 " Format current paragraph or visual selection
-nmap , gq
-nmap , gqap
+nmap .. gq
+nmap .. gqap
+
+" Collapse and expand
+nmap <leader>o :action CollapseRegionRecursively<cr>
+nmap <leader>O :action ExpandRegionRecursively<cr>
 
 " These create newlines like o and O but stay in normal mode
-nmap 'h o<Esc>k
-nmap 't O<Esc>j
+nmap 'j o<Esc>k
+nmap 'k O<Esc>j
 
 " Closing tabs
 nmap <leader>q :action CloseContent<cr>
@@ -35,7 +41,7 @@ nmap <leader>Q :action ReopenClosedTab<cr>
 
 " To navigate between split panes
 nmap <leader>,l :action NextSplitter<cr>
-nmap <leader>,r :action PrevSplitter<cr>
+nmap <leader>,h :action PrevSplitter<cr>
 
 " Full screen window
 nmap <leader>,u :action HideAllWindows<cr>
@@ -47,18 +53,17 @@ nmap <leader>,j :action Unsplit<cr>
 nmap <leader>,J :action UnsplitAll<cr>
 nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
 
-" NERDTree
-map <leader>mm :NERDTree<CR>
-map <leader>mu :NERDTreeFind<CR>
+" NERDtree
+map <leader>sa :NERDTree<CR>
+map <leader>sf :NERDTreeFind<CR>
 
 " Navigation
 
 nmap <leader>h :action Back<cr>
 nmap <leader>l :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
-nmap <leader>u :action ShowUsages<cr>
+nmap <leader>u :action FindUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
-nmap <leader>r :action GoToDeclaration<cr>
 nmap <leader>f :action GotoFile<cr>
 nmap <leader>c :action GotoClass<cr>
 nmap <leader>s :action GotoSymbol<cr>
@@ -94,9 +99,14 @@ vmap <leader>em :action ExtractMethod<cr>
 nmap <leader>er :action RenameElement<cr>
 nmap <leader>eg :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
+nmap @ i<cr><Esc>
+nmap <leader>@ kJl
+
+" Introduce Refactorings
 nmap <leader>ev :action IntroduceVariable<cr>
+nmap <leader>ep :action IntroduceParameter<cr>
 nmap <leader>ef :action IntroduceField<cr>
-nmap <leader>et :action IntroduceConstant<cr>
+nmap <leader>et :action IntroduceConstant
 
 "Inspection
 nmap <leader>ec :action InspectCode<cr>
@@ -118,7 +128,7 @@ nmap <leader>T :action ActivateTerminalToolWindow<cr>
 nmap <leader>G :action ActivateMavenToolWindow<cr>
 
 " External nvim
-nmap <leader>v :action Tool_External Tools_nvim-qt<cr>
+nmap <leader>v :action Tool_External Tools_nvim<cr>
 
 " IdeaVim uses 'a' for alt instead of Vim's 'm'
 nmap <a-j> 15gj
@@ -131,11 +141,11 @@ nmap gcc :action CommentByLineComment<cr>
 " unimpaired mappings
 nnoremap [<space> O<Esc>j
 nnoremap ]<space> o<Esc>k
-nnoremap po :action PreviousOccurence<cr>
+nnoremap .o :action PreviousOccurence<cr>
 nnoremap no :action NextOccurence<cr>
-nnoremap pm :action MethodUp<cr>
+nnoremap .m :action MethodUp<cr>
 nnoremap nm :action MethodDown<cr>
-nnoremap pc :action VcsShowPrevChangeMarker<cr>
+nnoremap .c :action VcsShowPrevChangeMarker<cr>
 nnoremap nc :action VcsShowNextChangeMarker<cr>
 
 " Tabs
@@ -147,11 +157,11 @@ nmap <leader>/ :action Find<cr>
 nmap <leader>? :action FindInPath<cr>
 
 " Moving lines
-nmap pe :action MoveLineUp<cr>
+nmap .e :action MoveLineUp<cr>
 nmap ne :action MoveLineDown<cr>
 
 " Moving statements
-nmap ps :action MoveStatementUp<cr>
+nmap .s :action MoveStatementUp<cr>
 nmap ns :action MoveStatementDown<cr>
 
 " Building, Running, and Debugging
