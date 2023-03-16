@@ -24,16 +24,16 @@ let mapleader = " "
 nmap ; :
 
 " Format current paragraph or visual selection
-nmap . gq
-nmap . gqap
+nmap .. gq
+nmap .. gqap
 
 " Collapse and expand
 nmap <leader>o :action CollapseRegionRecursively<cr>
 nmap <leader>O :action ExpandRegionRecursively<cr>
 
 " These create newlines like o and O but stay in normal mode
-nmap 'h o<Esc>k
-nmap 't O<Esc>j
+nmap 'j o<Esc>k
+nmap 'k O<Esc>j
 
 " Closing tabs
 nmap <leader>q :action CloseContent<cr>
@@ -102,6 +102,12 @@ nmap <leader>eI :action OptimizeImports<cr>
 nmap @ i<cr><Esc>
 nmap <leader>@ kJl
 
+" Introduce Refactorings
+nmap <leader>ev :action IntroduceVariable<cr>
+nmap <leader>ep :action IntroduceParameter<cr>
+nmap <leader>ef :action IntroduceField<cr>
+nmap <leader>et :action IntroduceConstant
+
 "Inspection
 nmap <leader>ec :action InspectCode<cr>
 
@@ -135,11 +141,11 @@ nmap gcc :action CommentByLineComment<cr>
 " unimpaired mappings
 nnoremap [<space> O<Esc>j
 nnoremap ]<space> o<Esc>k
-nnoremap po :action PreviousOccurence<cr>
+nnoremap .o :action PreviousOccurence<cr>
 nnoremap no :action NextOccurence<cr>
-nnoremap pm :action MethodUp<cr>
+nnoremap .m :action MethodUp<cr>
 nnoremap nm :action MethodDown<cr>
-nnoremap pc :action VcsShowPrevChangeMarker<cr>
+nnoremap .c :action VcsShowPrevChangeMarker<cr>
 nnoremap nc :action VcsShowNextChangeMarker<cr>
 
 " Tabs
@@ -151,11 +157,11 @@ nmap <leader>/ :action Find<cr>
 nmap <leader>? :action FindInPath<cr>
 
 " Moving lines
-nmap pe :action MoveLineUp<cr>
+nmap .e :action MoveLineUp<cr>
 nmap ne :action MoveLineDown<cr>
 
 " Moving statements
-nmap ps :action MoveStatementUp<cr>
+nmap .s :action MoveStatementUp<cr>
 nmap ns :action MoveStatementDown<cr>
 
 " Building, Running, and Debugging
