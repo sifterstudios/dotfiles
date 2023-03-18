@@ -28,9 +28,6 @@
     ~/.config/kitty:
         path: config/kitty/
         create: true
-    ~/.config/btop:
-        path: config/btop/
-        create: true
     ~/.config/dconf:
         path: config/dconf/
         create: true
