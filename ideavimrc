@@ -10,6 +10,10 @@ set notimeout
 Plug 'preservim/nerdtree'
 " Copy to system clipboard as well
 set clipboard+=unnamed
+vnoremap p "_dP
+nnoremap <leader>Y gg"+yG
+vnoremap <leader>p p
+
 
 " Use Idea to join lines smartly
 set ideajoin
@@ -156,8 +160,8 @@ nmap <leader>/ :action Find<cr>
 nmap <leader>? :action FindInPath<cr>
 
 " Moving lines
-nmap .e :action MoveLineUp<cr>
-nmap ne :action MoveLineDown<cr>
+nmap K :action MoveLineUp<cr>
+nmap J :action MoveLineDown<cr>
 
 " Moving statements
 nmap .s :action MoveStatementUp<cr>
