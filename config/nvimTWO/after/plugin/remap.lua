@@ -28,11 +28,11 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Toggle twilight
 vim.keymap.set("n", "<leader>tt", "<cmd>Twilight<cr>",
-  { silent = true, noremap = true })
+{ silent = true, noremap = true })
 
 -- Toggle ZenMode
 vim.keymap.set("n", "<leader>zz", "<cmd>ZenMode<cr>",
-  { silent = true, noremap = true })
+{ silent = true, noremap = true })
 
 -- Delete from cursor positon, combine with ^ or $, for example
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
