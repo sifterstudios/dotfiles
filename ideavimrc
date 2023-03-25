@@ -1,6 +1,8 @@
 set ignorecase
 set smartcase
 set scrolloff=3 " 3 lines above/below cursor when scrolling
+" TODO: todo-window
+
 
 " Emulated plugins
 set surround
@@ -8,31 +10,31 @@ set easymotion
 set which-key
 set notimeout
 Plug 'preservim/nerdtree'
-" Copy to system clipboard as well
-set clipboard+=unnamed
-vnoremap p "_dP
-nnoremap <leader>Y gg"+yG
-vnoremap <leader>p p
+" Copy to system clipboard
+vnoremap <leader>y :action $Copy<cr>
+nnoremap <leader>y :action $Copy<cr>
+" Paste from clipboard
+vnoremap <leader>p :action $Paste<cr>
+nnoremap <leader>p :action $Paste<cr>
+
+" Copy whole file
+nnoremap <leader>Y ggVG:action $Copy<cr>
 
 
 " Use Idea to join lines smartly
 set ideajoin
 
 ", Multiple cursor support
-s,et multiple-cursors
+set multiple-cursors
 
 let mapleader = " "
 
 " Map semicolon to colon to not have to use Shift. Lazy dev.
 nmap ; :
 
-" Format current paragraph or visual selection
-nmap .. gq
-nmap .. gqap
-
 " Collapse and expand
-nmap <leader>o :action CollapseRegionRecursively<cr>
-nmap <leader>O :action ExpandRegionRecursively<cr>
+" nmap <leader>o :action CollapseRegionRecursively<cr>
+" nmap <leader>O :action ExpandRegionRecursively<cr>
 
 " These create newlines like o and O but stay in normal mode
 nmap 'j o<Esc>k
@@ -80,7 +82,6 @@ nmap <leader>I :action SelectIn<cr>
 nmap <leader>. :action RecentFiles<cr>
 nmap <leader>a :action RecentChangedFiles<cr>
 nmap <leader>t :action GotoTest<cr>
-nmap <leader>p :action JumpToLastWindow<cr>
 nmap <leader>B :action ShowBookmarks<cr>
 
 " Useful Git actions
@@ -93,8 +94,8 @@ nmap <leader>gm :action Git.Merge<cr>
 nmap <leader>,a :action GotoAction<cr>
 
 " Errors
-nmap <leader>x :action GotoNextError<cr>
-nmap <leader>X :action GotoPreviousError<cr>
+nmap <leader>o :action GotoNextError<cr>
+nmap <leader>O :action GotoPreviousError<cr>
 
 " Refactorings
 vmap T :action Refactorings.QuickListPopupAction<cr>
