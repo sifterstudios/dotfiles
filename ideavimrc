@@ -59,11 +59,10 @@ nmap <leader>,J :action UnsplitAll<cr>
 nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
-map <leader>sa :NERDTree<CR>
+map \ :NERDTree<CR>
 map <leader>sf :NERDTreeFind<CR>
 
 " Navigation
-
 nmap <leader>h :action Back<cr>
 nmap <leader>l :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
@@ -100,11 +99,11 @@ nmap <leader>O :action GotoPreviousError<cr>
 " Refactorings
 vmap T :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
-nmap <leader>er :action RenameElement<cr>
-nmap <leader>eg :action Generate<cr>
+nmap <leader>rn :action RenameElement<cr>
+nmap <leader>ge :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
 nmap @ i<cr><Esc>
-nmap <leader>@ kJl
+nmap ^ kJl
 
 " Introduce Refactorings
 nmap <leader>ev :action IntroduceVariable<cr>
@@ -143,8 +142,6 @@ nmap <a-k> 15gk
 nmap gcc :action CommentByLineComment<cr>
 
 " unimpaired mappings
-nnoremap [<space> O<Esc>j
-nnoremap ]<space> o<Esc>k
 nnoremap .o :action PreviousOccurence<cr>
 nnoremap no :action NextOccurence<cr>
 nnoremap .m :action MethodUp<cr>
@@ -153,23 +150,22 @@ nnoremap .c :action VcsShowPrevChangeMarker<cr>
 nnoremap nc :action VcsShowNextChangeMarker<cr>
 
 " Tabs
-nnoremap sa :action PreviousTab<cr>
-nnoremap ss :action NextTab<cr>
+"nnoremap sa :action PreviousTab<cr>
+"nnoremap ss :action NextTab<cr>
 
 " Search
 nmap <leader>/ :action Find<cr>
 nmap <leader>? :action FindInPath<cr>
 
 " Moving lines
-nmap K :action MoveLineUp<cr>
-nmap J :action MoveLineDown<cr>
+nmap <C-k> :action MoveLineUp<cr>
+nmap <C-j> :action MoveLineDown<cr>
 
 " Moving statements
 nmap .s :action MoveStatementUp<cr>
 nmap ns :action MoveStatementDown<cr>
 
 " Building, Running, and Debugging
-nmap ,c :action CompileDirty<cr>
 nmap ,r :action Run<cr>
 nmap ,R :action RunAnything<cr>
 nmap ,b :action Debug<cr>
@@ -186,19 +182,18 @@ nmap ,H :action LocalHistory.ShowHistory<cr>
 nmap ,e :action JumpToLastChange<cr>
 
 " AceJump shortcut
-nmap <leader>j :action AceAction<cr>
+nmap s :action AceAction<cr>
 nmap ,yy :action CopySourceRootPath<cr>
-nmap ,ya :action CopyAbsolutePath<cr>
+nmap ya :action CopyAbsolutePath<cr>
 nmap ,l :action RecentLocations<cr>
 nmap ,S :action ShowProjectStructureSettings<cr>
 
-" Pin/Unpin active tab
-nmap \p :action PinActiveTabToggle<cr>
-
 " Previous Vim File
 nnoremap <BS> <C-S-6>
-nnoremap <leader><leader> <C-S-6>
 
 " Increase or decrease font size
 nnoremap <C-.> :action EditorIncreaseFontSize<cr>
 nnoremap <C-,> :action EditorDecreaseFontSize<cr>
+
+" Toggle Zen Mode
+nmap zz :action ToggleZenMode<cr>
