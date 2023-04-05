@@ -33,8 +33,8 @@ let mapleader = " "
 nmap ; :
 
 " Collapse and expand
-" nmap <leader>o :action CollapseRegionRecursively<cr>
-" nmap <leader>O :action ExpandRegionRecursively<cr>
+nmap za :action CollapseRegionRecursively<cr>
+nmap Za :action ExpandRegionRecursively<cr>
 
 " These create newlines like o and O but stay in normal mode
 nmap 'j o<Esc>k
@@ -150,8 +150,8 @@ nnoremap .c :action VcsShowPrevChangeMarker<cr>
 nnoremap nc :action VcsShowNextChangeMarker<cr>
 
 " Tabs
-"nnoremap sa :action PreviousTab<cr>
-"nnoremap ss :action NextTab<cr>
+nnoremap & :action PreviousTab<cr>
+nnoremap # :action NextTab<cr>
 
 " Search
 nmap <leader>/ :action Find<cr>
