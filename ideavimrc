@@ -1,3 +1,4 @@
+set visualbell
 set ignorecase
 set smartcase
 set scrolloff=3 " 3 lines above/below cursor when scrolling
@@ -27,8 +28,8 @@ set ideajoin
 ", Multiple cursor support
 set multiple-cursors
 
-let mapleader = " "
 
+let mapleader = " "
 " Map semicolon to colon to not have to use Shift. Lazy dev.
 nmap ; :
 
@@ -60,7 +61,10 @@ nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
 map \ :NERDTree<CR>
+<<<<<<< HEAD
 map <leader>sf :NERDTreeFind<CR>
+=======
+>>>>>>> b081461 (ideavim)
 
 " Navigation
 nmap <leader>h :action Back<cr>
