@@ -1,9 +1,18 @@
 set visualbell
+set showcmd
 set ignorecase
 set smartcase
 set scrolloff=3 " 3 lines above/below cursor when scrolling
+set showmode
+set quickscope
+set highlightedyank
+set commentary
+set argtextobj
+set textobj-entire
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_primary_color = '#4ba88a'
+let g:qs_secondary_color = '#4cb88b'
 " TODO: todo-window
-
 
 " Emulated plugins
 set surround
@@ -61,10 +70,10 @@ nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
 map \ :NERDTree<CR>
-<<<<<<< HEAD
-map <leader>sf :NERDTreeFind<CR>
-=======
->>>>>>> b081461 (ideavim)
+
+" Alt+j/k for autocompletion popup
+inoremap <A-j> <C-n>
+inoremap <A-k> <C-p>
 
 " Navigation
 nmap <leader>h :action Back<cr>
@@ -93,6 +102,7 @@ nmap <leader>gp :action Git.Pull<cr>
 nmap <leader>gu :action Git.Push<cr>
 nmap <leader>gr :action Git.Rebase<cr>
 nmap <leader>gm :action Git.Merge<cr>
+nmap <leader>gc :action Vcs.ChangesView<cr>
 
 nmap <leader>,a :action GotoAction<cr>
 
@@ -129,7 +139,7 @@ nmap <leader>yr :action Git.ResolveConflicts<cr>
 nmap <leader>yo :action Github.Open.In.Browser<cr>
 
 " Terminal
-nmap <leader>T :action ActivateTerminalToolWindow<cr>
+nmap <leader>t :action ActivateTerminalToolWindow<cr>
 
 " Gradle
 nmap <leader>G :action ActivateMavenToolWindow<cr>
