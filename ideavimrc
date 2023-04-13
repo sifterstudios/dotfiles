@@ -3,6 +3,8 @@ set showcmd
 set ignorecase
 set smartcase
 set scrolloff=3 " 3 lines above/below cursor when scrolling
+set modeline
+set modelines=2
 set showmode
 set quickscope
 set highlightedyank
@@ -13,6 +15,20 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_primary_color = '#4ba88a'
 let g:qs_secondary_color = '#4cb88b'
 " TODO: todo-window
+
+" Harpoon
+nnoremap <C-e> :action ShowHarpoon<cr>
+nnoremap <A-e> :action AddToHarpoon<cr>
+
+nnoremap <C-h> :action GotoHarpoon1<cr>
+nnoremap <C-t> :action GotoHarpoon2<cr>
+nnoremap <C-n> :action GotoHarpoon3<cr>
+nnoremap <C-s> :action GotoHarpoon4<cr>
+
+nnoremap <A-h> :action SetHarpoon1<cr>
+nnoremap <A-t> :action SetHarpoon2<cr>
+nnoremap <A-n> :action SetHarpoon3<cr>
+nnoremap <A-s> :action SetHarpoon4<cr>
 
 " Emulated plugins
 set surround
@@ -43,8 +59,7 @@ let mapleader = " "
 nmap ; :
 
 " Collapse and expand
-nmap za :action CollapseRegionRecursively<cr>
-nmap Za :action ExpandRegionRecursively<cr>
+nmap za :action ExpandCollapseToggleAction<cr>
 
 " These create newlines like o and O but stay in normal mode
 nmap 'j o<Esc>k
@@ -70,6 +85,8 @@ nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
 map \ :NERDTree<CR>
+let NERDTreeQuitOnOpen=1
+let NERDTreeWinSize=35
 
 " Alt+j/k for autocompletion popup
 inoremap <A-j> <C-n>
@@ -139,7 +156,7 @@ nmap <leader>yr :action Git.ResolveConflicts<cr>
 nmap <leader>yo :action Github.Open.In.Browser<cr>
 
 " Terminal
-nmap <leader>t :action ActivateTerminalToolWindow<cr>
+nmap <leader><cr> :action ActivateTerminalToolWindow<cr>
 
 " Gradle
 nmap <leader>G :action ActivateMavenToolWindow<cr>
@@ -211,3 +228,9 @@ nnoremap <C-,> :action EditorDecreaseFontSize<cr>
 
 " Toggle Zen Mode
 nmap zz :action ToggleZenMode<cr>
+
+nmap <C-Space> :action EditorSelectWord<cr>
+vmap <C-Space> :action EditorSelectWord<cr>
+nmap <C-S-Space> :action EditorUnSelectWord<cr>
+vmap <C-S-Space> :action EditorUnSelectWord<cr>
+imap <C-Space> :action CodeCompletion<cr>
