@@ -158,7 +158,7 @@ nmap <leader>yo :action Github.Open.In.Browser<cr>
 " Terminal
 nmap <leader><cr> :action ActivateTerminalToolWindow<cr>
 
-" Gradle
+" Maven
 nmap <leader>G :action ActivateMavenToolWindow<cr>
 
 " External nvim
