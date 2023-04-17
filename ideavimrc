@@ -93,8 +93,8 @@ inoremap <A-j> <C-n>
 inoremap <A-k> <C-p>
 
 " Navigation
-nmap <leader>h :action Back<cr>
-nmap <leader>l :action Forward<cr>
+nmap <BS> :action Back<cr>
+nmap <S-BS> :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
 nmap <leader>u :action ShowUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
@@ -107,13 +107,14 @@ nmap <leader>M :action ActivateStructureToolWindow<cr>
 nmap <leader>d :action ShowErrorDescription<cr>
 nmap <leader>i :action GotoImplementation<cr>
 nmap <leader>U :action GotoSuperMethod<cr>
-nmap <leader>I :action SelectIn<cr>
+nmap <leader>I :action SelectInProjectView<cr>
 nmap <leader>. :action RecentFiles<cr>
 nmap <leader>a :action RecentChangedFiles<cr>
 nmap <leader>t :action GotoTest<cr>
 nmap <leader>B :action ShowBookmarks<cr>
 
 " Useful Git actions
+nmap <leader>gf :action Git.Fetch<cr>
 nmap <leader>ga :action Git.Branches<cr>
 nmap <leader>gp :action Git.Pull<cr>
 nmap <leader>gu :action Git.Push<cr>
@@ -128,12 +129,15 @@ nmap <leader>o :action GotoNextError<cr>
 nmap <leader>O :action GotoPreviousError<cr>
 
 " Refactorings
+nmap <leader>ca :action ProblemsView.QuickFixes<cr>
+nmap <leader>ca :action ShowIntentionActions<cr>
+nmap <C-f> :action ReformatCode<cr>
 vmap T :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
-nmap <leader>rn :action RenameElement<cr>
+nmap <leader>ra :action RenameElement<cr>
 nmap <leader>ge :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
-nmap @ i<cr><Esc>
+nmap @ :action EditorSplitLine<cr>
 nmap ^ kJl
 
 " Introduce Refactorings
@@ -220,7 +224,7 @@ nmap ,l :action RecentLocations<cr>
 nmap ,S :action ShowProjectStructureSettings<cr>
 
 " Previous Vim File
-nnoremap <BS> <C-S-6>
+"nnoremap <BS> <C-S-6>
 
 " Increase or decrease font size
 nnoremap <C-.> :action EditorIncreaseFontSize<cr>
