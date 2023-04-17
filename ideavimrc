@@ -6,11 +6,6 @@ set scrolloff=3 " 3 lines above/below cursor when scrolling
 set modeline
 set modelines=2
 set showmode
-set quickscope
-set highlightedyank
-set commentary
-set argtextobj
-set textobj-entire
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_primary_color = '#4ba88a'
 let g:qs_secondary_color = '#4cb88b'
@@ -31,6 +26,11 @@ nnoremap <A-n> :action SetHarpoon3<cr>
 nnoremap <A-s> :action SetHarpoon4<cr>
 
 " Emulated plugins
+set quickscope
+set highlightedyank
+set commentary
+set argtextobj
+set textobj-entire
 set surround
 set easymotion
 set which-key
@@ -50,7 +50,7 @@ nnoremap <leader>Y ggVG:action $Copy<cr>
 " Use Idea to join lines smartly
 set ideajoin
 
-", Multiple cursor support
+" Multiple cursor support
 set multiple-cursors
 
 
@@ -162,7 +162,7 @@ nmap <leader>yo :action Github.Open.In.Browser<cr>
 " Terminal
 nmap <leader><cr> :action ActivateTerminalToolWindow<cr>
 
-" Gradle
+" Maven
 nmap <leader>G :action ActivateMavenToolWindow<cr>
 
 " External nvim
@@ -233,8 +233,12 @@ nnoremap <C-,> :action EditorDecreaseFontSize<cr>
 " Toggle Zen Mode
 nmap zz :action ToggleZenMode<cr>
 
+" Expand Selection in normal mode and CodeCompletion in insert mode
 nmap <C-Space> :action EditorSelectWord<cr>
 vmap <C-Space> :action EditorSelectWord<cr>
 nmap <C-S-Space> :action EditorUnSelectWord<cr>
 vmap <C-S-Space> :action EditorUnSelectWord<cr>
 imap <C-Space> :action CodeCompletion<cr>
+
+" Live templates
+imap <leader>it :action InsertLiveTemplate<cr>
