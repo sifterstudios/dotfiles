@@ -176,14 +176,6 @@ nmap <a-k> 15gk
 " Use default map of <c-/> for that.
 nmap gcc :action CommentByLineComment<cr>
 
-" unimpaired mappings
-nnoremap .o :action PreviousOccurence<cr>
-nnoremap no :action NextOccurence<cr>
-nnoremap .m :action MethodUp<cr>
-nnoremap nm :action MethodDown<cr>
-nnoremap .c :action VcsShowPrevChangeMarker<cr>
-nnoremap nc :action VcsShowNextChangeMarker<cr>
-
 " Tabs
 nnoremap & :action PreviousTab<cr>
 nnoremap # :action NextTab<cr>
