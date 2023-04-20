@@ -36,9 +36,9 @@ set easymotion
 set which-key
 set notimeout
 Plug 'preservim/nerdtree'
+
 " Copy to system clipboard
 vnoremap <leader>y :action $Copy<cr>
-nnoremap <leader>y :action $Copy<cr>
 " Paste from clipboard
 vnoremap <leader>p :action $Paste<cr>
 nnoremap <leader>p :action $Paste<cr>
@@ -84,7 +84,7 @@ nmap <leader>,J :action UnsplitAll<cr>
 nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
-map \ :NERDTree<CR>
+map ! :NERDTree<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
 
@@ -144,7 +144,7 @@ nmap ^ kJl
 nmap <leader>ev :action IntroduceVariable<cr>
 nmap <leader>ep :action IntroduceParameter<cr>
 nmap <leader>ef :action IntroduceField<cr>
-nmap <leader>et :action IntroduceConstant
+nmap <leader>et :action IntroduceConstant<cr>
 
 "Inspection
 nmap <leader>ec :action InspectCode<cr>
@@ -176,44 +176,47 @@ nmap <a-k> 15gk
 " Use default map of <c-/> for that.
 nmap gcc :action CommentByLineComment<cr>
 
-" Tabs
-nnoremap & :action PreviousTab<cr>
-nnoremap # :action NextTab<cr>
-
 " Search
-nmap <leader>/ :action Find<cr>
+nmap / :action Find<cr>
+vmap <leader>/ :action SelectAllOccurrences<cr>
 nmap <leader>? :action FindInPath<cr>
+vmap <leader>no :action SelectNextOccurrence<cr>
+vmap <leader>po :action SelectPreviousOccurrence<cr>
 
 " Moving lines
-nmap <C-k> :action MoveLineUp<cr>
-nmap <C-j> :action MoveLineDown<cr>
+nmap <leader>mk :action MoveLineUp<cr>
+nmap <leader>mj :action MoveLineDown<cr>
+
+" Move Elements
+nmap <leader>mh :action MoveElementLeft<cr>
+nmap <leader>ml :action MoveElementRight<cr>
 
 " Moving statements
 nmap .s :action MoveStatementUp<cr>
 nmap ns :action MoveStatementDown<cr>
 
 " Building, Running, and Debugging
-nmap ,r :action Run<cr>
-nmap ,R :action RunAnything<cr>
-nmap ,b :action Debug<cr>
-nmap ,c :action RunClass<cr>
-nmap ,d :action DebugClass<cr>
-nmap ,t :action RerunTests<cr>
-nmap ,T :action RerunFailedTests<cr>
-nmap ,p :action ToggleLineBreakpoint<cr>
-nmap ,i :action ParameterInfo<cr>
+nmap <leader>rr :action Run<cr>
+nmap <leader>rR :action RunAnything<cr>
+nmap <leader>rb :action Debug<cr>
+nmap <leader>rc :action RunClass<cr>
+nmap <leader>rd :action DebugClass<cr>
+nmap <leader>rt :action RerunTests<cr>
+nmap <leader>rT :action RerunFailedTests<cr>
+nmap <leader>bp :action ToggleLineBreakpoint<cr>
+nmap <C-k> :action ParameterInfo<cr>
+vmap <C-k> :action ParameterInfo<cr>
+imap <C-k> :action ParameterInfo<cr>
 
 " Useful Quick Actions
-nmap ,, :action QuickJavaDoc<cr>
 nmap ,H :action LocalHistory.ShowHistory<cr>
-nmap ,e :action JumpToLastChange<cr>
+nmap <leader>lc :action JumpToLastChange<cr>
 
 " AceJump shortcut
 nmap s :action AceAction<cr>
+
 nmap ,yy :action CopySourceRootPath<cr>
 nmap ya :action CopyAbsolutePath<cr>
-nmap ,l :action RecentLocations<cr>
-nmap ,S :action ShowProjectStructureSettings<cr>
 
 " Previous Vim File
 "nnoremap <BS> <C-S-6>
@@ -232,5 +235,10 @@ nmap <C-S-Space> :action EditorUnSelectWord<cr>
 vmap <C-S-Space> :action EditorUnSelectWord<cr>
 imap <C-Space> :action CodeCompletion<cr>
 
-" Live templates
-imap <leader>it :action InsertLiveTemplate<cr>
+" Need to remap redo command for some reason!
+nmap <C-r> :action $Redo<cr>
+
+" Activate pull request window
+nmap <leader>pr :action Majera.CodeReview.Bitbucket.PullRequestsToolbar<cr>
+
+nmap X xi
