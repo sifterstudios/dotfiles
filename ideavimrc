@@ -36,9 +36,9 @@ set easymotion
 set which-key
 set notimeout
 Plug 'preservim/nerdtree'
+
 " Copy to system clipboard
 vnoremap <leader>y :action $Copy<cr>
-nnoremap <leader>y :action $Copy<cr>
 " Paste from clipboard
 vnoremap <leader>p :action $Paste<cr>
 nnoremap <leader>p :action $Paste<cr>
@@ -84,7 +84,7 @@ nmap <leader>,J :action UnsplitAll<cr>
 nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
-map \ :NERDTree<CR>
+map ! :NERDTree<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
 
@@ -93,8 +93,8 @@ inoremap <A-j> <C-n>
 inoremap <A-k> <C-p>
 
 " Navigation
-nmap <leader>h :action Back<cr>
-nmap <leader>l :action Forward<cr>
+nmap <BS> :action Back<cr>
+nmap <S-BS> :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
 nmap <leader>u :action ShowUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
@@ -107,13 +107,14 @@ nmap <leader>M :action ActivateStructureToolWindow<cr>
 nmap <leader>d :action ShowErrorDescription<cr>
 nmap <leader>i :action GotoImplementation<cr>
 nmap <leader>U :action GotoSuperMethod<cr>
-nmap <leader>I :action SelectIn<cr>
+nmap <leader>I :action SelectInProjectView<cr>
 nmap <leader>. :action RecentFiles<cr>
 nmap <leader>a :action RecentChangedFiles<cr>
 nmap <leader>t :action GotoTest<cr>
 nmap <leader>B :action ShowBookmarks<cr>
 
 " Useful Git actions
+nmap <leader>gf :action Git.Fetch<cr>
 nmap <leader>ga :action Git.Branches<cr>
 nmap <leader>gp :action Git.Pull<cr>
 nmap <leader>gu :action Git.Push<cr>
@@ -128,19 +129,22 @@ nmap <leader>o :action GotoNextError<cr>
 nmap <leader>O :action GotoPreviousError<cr>
 
 " Refactorings
+nmap <leader>ca :action ProblemsView.QuickFixes<cr>
+nmap <leader>ca :action ShowIntentionActions<cr>
+nmap <C-f> :action ReformatCode<cr>
 vmap T :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
-nmap <leader>rn :action RenameElement<cr>
+nmap <leader>ra :action RenameElement<cr>
 nmap <leader>ge :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
-nmap @ i<cr><Esc>
+nmap @ :action EditorSplitLine<cr>
 nmap ^ kJl
 
 " Introduce Refactorings
 nmap <leader>ev :action IntroduceVariable<cr>
 nmap <leader>ep :action IntroduceParameter<cr>
 nmap <leader>ef :action IntroduceField<cr>
-nmap <leader>et :action IntroduceConstant
+nmap <leader>et :action IntroduceConstant<cr>
 
 "Inspection
 nmap <leader>ec :action InspectCode<cr>
@@ -172,56 +176,50 @@ nmap <a-k> 15gk
 " Use default map of <c-/> for that.
 nmap gcc :action CommentByLineComment<cr>
 
-" unimpaired mappings
-nnoremap .o :action PreviousOccurence<cr>
-nnoremap no :action NextOccurence<cr>
-nnoremap .m :action MethodUp<cr>
-nnoremap nm :action MethodDown<cr>
-nnoremap .c :action VcsShowPrevChangeMarker<cr>
-nnoremap nc :action VcsShowNextChangeMarker<cr>
-
-" Tabs
-nnoremap & :action PreviousTab<cr>
-nnoremap # :action NextTab<cr>
-
 " Search
-nmap <leader>/ :action Find<cr>
+nmap / :action Find<cr>
+vmap <leader>/ :action SelectAllOccurrences<cr>
 nmap <leader>? :action FindInPath<cr>
+vmap <leader>no :action SelectNextOccurrence<cr>
+vmap <leader>po :action SelectPreviousOccurrence<cr>
 
 " Moving lines
-nmap <C-k> :action MoveLineUp<cr>
-nmap <C-j> :action MoveLineDown<cr>
+nmap <leader>mk :action MoveLineUp<cr>
+nmap <leader>mj :action MoveLineDown<cr>
+
+" Move Elements
+nmap <leader>mh :action MoveElementLeft<cr>
+nmap <leader>ml :action MoveElementRight<cr>
 
 " Moving statements
 nmap .s :action MoveStatementUp<cr>
 nmap ns :action MoveStatementDown<cr>
 
 " Building, Running, and Debugging
-nmap ,r :action Run<cr>
-nmap ,R :action RunAnything<cr>
-nmap ,b :action Debug<cr>
-nmap ,c :action RunClass<cr>
-nmap ,d :action DebugClass<cr>
-nmap ,t :action RerunTests<cr>
-nmap ,T :action RerunFailedTests<cr>
-nmap ,p :action ToggleLineBreakpoint<cr>
-nmap ,i :action ParameterInfo<cr>
+nmap <leader>rr :action Run<cr>
+nmap <leader>rR :action RunAnything<cr>
+nmap <leader>rb :action Debug<cr>
+nmap <leader>rc :action RunClass<cr>
+nmap <leader>rd :action DebugClass<cr>
+nmap <leader>rt :action RerunTests<cr>
+nmap <leader>rT :action RerunFailedTests<cr>
+nmap <leader>bp :action ToggleLineBreakpoint<cr>
+nmap <C-k> :action ParameterInfo<cr>
+vmap <C-k> :action ParameterInfo<cr>
+imap <C-k> :action ParameterInfo<cr>
 
 " Useful Quick Actions
-nmap ,, :action QuickJavaDoc<cr>
 nmap ,H :action LocalHistory.ShowHistory<cr>
-nmap ,e :action JumpToLastChange<cr>
+nmap <leader>lc :action JumpToLastChange<cr>
 
 " AceJump shortcut
 nmap s :action AceAction<cr>
 
 nmap ,yy :action CopySourceRootPath<cr>
 nmap ya :action CopyAbsolutePath<cr>
-nmap ,l :action RecentEditedLocations<cr>
-nmap ,S :action ShowProjectStructureSettings<cr>
 
 " Previous Vim File
-nnoremap <BS> <C-S-6>
+"nnoremap <BS> <C-S-6>
 
 " Increase or decrease font size
 nnoremap <C-.> :action EditorIncreaseFontSize<cr>
@@ -237,5 +235,10 @@ nmap <C-S-Space> :action EditorUnSelectWord<cr>
 vmap <C-S-Space> :action EditorUnSelectWord<cr>
 imap <C-Space> :action CodeCompletion<cr>
 
-" Live templates
-imap <leader>it :action InsertLiveTemplate<cr>
+" Need to remap redo command for some reason!
+nmap <C-r> :action $Redo<cr>
+
+" Activate pull request window
+nmap <leader>pr :action Majera.CodeReview.Bitbucket.PullRequestsToolbar<cr>
+
+nmap X xi
