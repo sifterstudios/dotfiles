@@ -214,9 +214,10 @@ nmap ,e :action JumpToLastChange<cr>
 
 " AceJump shortcut
 nmap s :action AceAction<cr>
+
 nmap ,yy :action CopySourceRootPath<cr>
 nmap ya :action CopyAbsolutePath<cr>
-nmap ,l :action RecentLocations<cr>
+nmap ,l :action RecentEditedLocations<cr>
 nmap ,S :action ShowProjectStructureSettings<cr>
 
 " Previous Vim File
