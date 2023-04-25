@@ -60,8 +60,8 @@ nmap ; :
 nmap za :action ExpandCollapseToggleAction<cr>
 
 " These create newlines like o and O but stay in normal mode
-nmap nj o<Esc>k
-nmap nk O<Esc>j
+nmap <leader>nj o<Esc>k
+nmap <leader>nk O<Esc>j
 
 " Closing tabs
 nmap <leader>q :action CloseContent<cr>
@@ -111,6 +111,7 @@ nmap <leader>. :action RecentFiles<cr>
 nmap <leader>a :action RecentChangedFiles<cr>
 nmap <leader>t :action GotoTest<cr>
 nmap <leader>B :action ShowBookmarks<cr>
+nmap <leader>,t :action GotoAction<cr>
 
 " Useful Git actions
 nmap <leader>gf :action Git.Fetch<cr>
@@ -119,9 +120,7 @@ nmap <leader>gp :action Git.Pull<cr>
 nmap <leader>gu :action Git.Push<cr>
 nmap <leader>gr :action Git.Rebase<cr>
 nmap <leader>gm :action Git.Merge<cr>
-nmap <leader>gc :action Vcs.ChangesView<cr>
 
-nmap <leader>,a :action GotoAction<cr>
 
 " Errors
 nmap <leader>o :action GotoNextError<cr>
@@ -133,17 +132,17 @@ nmap <leader>ca :action ShowIntentionActions<cr>
 nmap <C-f> :action ReformatCode<cr>
 vmap <leader>rf :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
-nmap <leader>ra :action RenameElement<cr>
+nmap <leader>re :action RenameElement<cr>
 nmap <leader>ge :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
 nmap @ :action EditorSplitLine<cr>
 nmap ^ kJl
 
 " Introduce Refactorings
-nmap <leader>ev :action IntroduceVariable<cr>
-nmap <leader>ep :action IntroduceParameter<cr>
-nmap <leader>ef :action IntroduceField<cr>
-nmap <leader>et :action IntroduceConstant<cr>
+nmap <leader>iv :action IntroduceVariable<cr>
+nmap <leader>ip :action IntroduceParameter<cr>
+nmap <leader>if :action IntroduceField<cr>
+nmap <leader>ic :action IntroduceConstant<cr>
 
 "Inspection
 nmap <leader>ec :action InspectCode<cr>
@@ -167,10 +166,6 @@ nmap <leader>G :action ActivateMavenToolWindow<cr>
 " External nvim
 nmap <leader>v :action Tool_External Tools_nvim<cr>
 
-" IdeaVim uses 'a' for alt instead of Vim's 'm'
-nmap <a-j> 15gj
-nmap <a-k> 15gk
-
 " Won't work in visual mode (with vmap for some reason.
 " Use default map of <c-/> for that.
 nmap gcc :action CommentByLineComment<cr>
@@ -183,16 +178,16 @@ vmap <leader>no :action SelectNextOccurrence<cr>
 vmap <leader>po :action SelectPreviousOccurrence<cr>
 
 " Moving lines
-nmap <leader>mk :action MoveLineUp<cr>
-nmap <leader>mj :action MoveLineDown<cr>
+nmap <a-k> :action MoveLineUp<cr>
+nmap <a-j> :action MoveLineDown<cr>
 
 " Move Elements
-nmap <leader>mh :action MoveElementLeft<cr>
-nmap <leader>ml :action MoveElementRight<cr>
+nmap <leader>eh :action MoveElementLeft<cr>
+nmap <leader>el :action MoveElementRight<cr>
 
 " Moving statements
-nmap .s :action MoveStatementUp<cr>
-nmap ns :action MoveStatementDown<cr>
+nmap <leader>sk :action MoveStatementUp<cr>
+nmap <leader>sj :action MoveStatementDown<cr>
 
 " Building, Running, and Debugging
 nmap <leader>rr :action Run<cr>
@@ -214,18 +209,12 @@ nmap <leader>lc :action JumpToLastChange<cr>
 " AceJump shortcut
 nmap s :action AceAction<cr>
 
-nmap ,yy :action CopySourceRootPath<cr>
-nmap ya :action CopyAbsolutePath<cr>
-
-" Previous Vim File
-"nnoremap <BS> <C-S-6>
-
 " Increase or decrease font size
 nnoremap <C-.> :action EditorIncreaseFontSize<cr>
 nnoremap <C-,> :action EditorDecreaseFontSize<cr>
 
 " Toggle Zen Mode
-nmap zz :action ToggleZenMode<cr>
+nmap <leader>zz :action ToggleZenMode<cr>
 
 " Expand Selection in normal mode and CodeCompletion in insert mode
 nmap <C-Space> :action EditorSelectWord<cr>
