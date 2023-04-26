@@ -46,13 +46,11 @@ nnoremap <leader>p :action $Paste<cr>
 " Copy whole file
 nnoremap <leader>Y ggVG:action $Copy<cr>
 
-
 " Use Idea to join lines smartly
 set ideajoin
 
 " Multiple cursor support
 set multiple-cursors
-
 
 let mapleader = " "
 " Map semicolon to colon to not have to use Shift. Lazy dev.
@@ -67,6 +65,7 @@ nmap <leader>nk O<Esc>j
 
 " Closing tabs
 nmap <leader>q :action CloseContent<cr>
+nmap <leader>q :action CloseAllUnmodifiedEditors<cr>
 nmap <leader>Q :action ReopenClosedTab<cr>
 
 " To navigate between split panes
@@ -131,7 +130,7 @@ nmap <leader>O :action GotoPreviousError<cr>
 nmap <leader>ca :action ProblemsView.QuickFixes<cr>
 nmap <leader>ca :action ShowIntentionActions<cr>
 nmap <C-f> :action ReformatCode<cr>
-vmap R :action Refactorings.QuickListPopupAction<cr>
+vmap <leader>rf :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
 nmap <leader>re :action RenameElement<cr>
 nmap <leader>ge :action Generate<cr>
