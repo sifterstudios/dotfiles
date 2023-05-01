@@ -1,5 +1,7 @@
 set visualbell
 set showcmd
+set number
+set relativenumber
 set ignorecase
 set smartcase
 set scrolloff=3 " 3 lines above/below cursor when scrolling
