@@ -75,6 +75,7 @@ nmap <leader>sh :action PrevSplitter<cr>
 
 " Full screen window
 nmap <C-w>o :action HideAllWindows<cr>
+nmap <C-w><C-o> :action HideAllWindows<cr>
 
 " Splits manipulation
 nmap <leader>si :action SplitHorizontally<cr>
@@ -93,14 +94,13 @@ inoremap <A-j> <C-n>
 inoremap <A-k> <C-p>
 
 " Navigation
+" nmap <Space-Space> :action ViewNavigationBar<cr> " Not working currently
 nmap <BS> :action Back<cr>
 nmap <S-BS> :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
 nmap <leader>u :action ShowUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
 nmap <leader>f :action GotoFile<cr>
-nmap <leader>c :action GotoClass<cr>
-nmap <leader>s :action GotoSymbol<cr>
 nmap <leader>b :action ToggleBookmark<cr>
 nmap <leader>; :action FileStructurePopup<cr>
 nmap <leader>M :action ActivateStructureToolWindow<cr>
@@ -112,7 +112,6 @@ nmap <leader>. :action RecentFiles<cr>
 nmap <leader>a :action RecentChangedFiles<cr>
 nmap <leader>t :action GotoTest<cr>
 nmap <leader>B :action ShowBookmarks<cr>
-nmap <leader>,t :action GotoAction<cr>
 
 " Useful Git actions
 nmap <leader>gf :action Git.Fetch<cr>
@@ -197,7 +196,7 @@ nmap <leader>rb :action Debug<cr>
 nmap <leader>rc :action RunClass<cr>
 nmap <leader>rd :action DebugClass<cr>
 nmap <leader>rt :action RerunTests<cr>
-nmap <leader>rT :action RerunFailedTests<cr>
+nmap <leader>rf :action RerunFailedTests<cr>
 nmap <leader>bp :action ToggleLineBreakpoint<cr>
 nmap <C-k> :action ParameterInfo<cr>
 vmap <C-k> :action ParameterInfo<cr>
@@ -226,5 +225,3 @@ imap <C-Space> :action CodeCompletion<cr>
 
 " Need to remap redo command for some reason!
 nmap <C-r> :action $Redo<cr>
-
-nmap X xi
