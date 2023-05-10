@@ -121,6 +121,8 @@ nmap <leader>gp :action Git.Pull<cr>
 nmap <leader>gu :action Git.Push<cr>
 nmap <leader>gr :action Git.Rebase<cr>
 nmap <leader>gm :action Git.Merge<cr>
+nmap <leader>gc :action Vcs.Show.Local.Changes<cr>
+nmap <leader>g<cr> :action Vcs.QuickListPopupAction<cr>
 
 
 " Errors
@@ -137,7 +139,7 @@ nmap <leader>re :action RenameElement<cr>
 nmap <leader>ge :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
 nmap @ :action EditorSplitLine<cr>
-nmap ^ kJl
+nmap # kJl
 
 " Introduce Refactorings
 nmap <leader>iv :action IntroduceVariable<cr>
@@ -149,8 +151,6 @@ nmap <leader>ic :action IntroduceConstant<cr>
 nmap <leader>ec :action InspectCode<cr>
 
 " VCS operations
-nmap <leader>yy :action Vcs.Show.Local.Changes<cr>
-nmap <leader>yp :action Vcs.QuickListPopupAction<cr>
 nmap <leader>ya :action Annotate<cr>
 nmap <leader>yl :action Vcs.Show.Log<cr>
 nmap <leader>yd :action Compare.LastVersion<cr>
