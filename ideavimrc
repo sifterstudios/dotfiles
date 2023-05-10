@@ -6,6 +6,7 @@ set scrolloff=3 " 3 lines above/below cursor when scrolling
 set modeline
 set modelines=2
 set showmode
+set clipboard+=unnamed
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_primary_color = '#4ba88a'
 let g:qs_secondary_color = '#4cb88b'
@@ -64,23 +65,23 @@ nmap <leader>nj o<Esc>k
 nmap <leader>nk O<Esc>j
 
 " Closing tabs
-nmap <leader>q :action CloseContent<cr>
+nmap q :action CloseContent<cr>
 nmap <leader>q :action CloseAllUnmodifiedEditors<cr>
 nmap <leader>Q :action ReopenClosedTab<cr>
 
 " To navigate between split panes
-nmap <leader>,l :action NextSplitter<cr>
-nmap <leader>,h :action PrevSplitter<cr>
+nmap <leader>sl :action NextSplitter<cr>
+nmap <leader>sh :action PrevSplitter<cr>
 
 " Full screen window
-nmap <leader>,u :action HideAllWindows<cr>
+nmap <C-w>o :action HideAllWindows<cr>
 
 " Splits manipulation
-nmap <leader>,i :action SplitHorizontally<cr>
-nmap <leader>,- :action SplitVertically<cr>
-nmap <leader>,j :action Unsplit<cr>
-nmap <leader>,J :action UnsplitAll<cr>
-nmap <leader>,e :action OpenEditorInOppositeTabGroup<cr>
+nmap <leader>si :action SplitHorizontally<cr>
+nmap <leader>s- :action SplitVertically<cr>
+nmap <leader>su :action Unsplit<cr>
+nmap <leader>sU :action UnsplitAll<cr>
+nmap <leader>se :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
 map ! :NERDTree<CR>
@@ -130,7 +131,7 @@ nmap <leader>O :action GotoPreviousError<cr>
 nmap <leader>ca :action ProblemsView.QuickFixes<cr>
 nmap <leader>ca :action ShowIntentionActions<cr>
 nmap <C-f> :action ReformatCode<cr>
-vmap <leader>rf :action Refactorings.QuickListPopupAction<cr>
+vmap <leader>ra :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
 nmap <leader>re :action RenameElement<cr>
 nmap <leader>ge :action Generate<cr>
