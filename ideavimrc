@@ -124,7 +124,12 @@ nmap <leader>gr :action Git.Rebase<cr>
 nmap <leader>gm :action Git.Merge<cr>
 nmap <leader>gc :action Vcs.Show.Local.Changes<cr>
 nmap <leader>g<cr> :action Vcs.QuickListPopupAction<cr>
-
+nmap <leader>ggc :action Majera.CodeReview.Bitbucket.CreateCommentInDiffEditor<cr>
+nmap <leader>ggc :action Majera.CodeReview.Bitbucket.CreateCommentInOrdinaryEditor
+nmap <leader>ggt :action Majera.CodeReview.Bitbucket.CreateGeneralTask
+nmap <leader>ggs :action Majera.CodeReview.Bitbucket.JumpToSource
+nmap <leader>ggd :action Majera.CodeReview.Bitbucket.JumpToSourceInDiff
+nmap <leader>ggp :action ActivateBitbucketPullRequestsToolWindow
 
 " Errors
 nmap <leader>o :action GotoNextError<cr>
