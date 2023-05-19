@@ -23,10 +23,10 @@ nnoremap <C-t> :action GotoHarpoon2<cr>
 nnoremap <C-n> :action GotoHarpoon3<cr>
 nnoremap <C-s> :action GotoHarpoon4<cr>
 
-nnoremap <A-h> :action SetHarpoon1<cr>
-nnoremap <A-t> :action SetHarpoon2<cr>
-nnoremap <A-n> :action SetHarpoon3<cr>
-nnoremap <A-s> :action SetHarpoon4<cr>
+nmap <A-h> :action SetHarpoon1<cr>
+nmap <A-t> :action SetHarpoon2<cr>
+nmap <A-n> :action SetHarpoon3<cr>
+nmap <A-s> :action SetHarpoon4<cr>
 
 " Emulated plugins
 set quickscope
@@ -71,6 +71,10 @@ nmap q :action CloseContent<cr>
 nmap <leader>q :action CloseAllUnmodifiedEditors<cr>
 nmap <leader>Q :action ReopenClosedTab<cr>
 
+" Tab navigation
+nmap ! :action NextTab<cr>
+nmap + :action PreviousTab<cr>
+
 " To navigate between split panes
 nmap <leader>sl :action NextSplitter<cr>
 nmap <leader>sh :action PrevSplitter<cr>
@@ -87,7 +91,7 @@ nmap <leader>sU :action UnsplitAll<cr>
 nmap <leader>se :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
-map ! :NERDTree<CR>
+map <A-S-1> :NERDTree<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
 
@@ -116,6 +120,7 @@ nmap <leader>t :action GotoTest<cr>
 nmap <leader>B :action ShowBookmarks<cr>
 
 " Useful Git actions
+nmap <leader>gl :action Vcs.Show.Log<cr>
 nmap <leader>gf :action Git.Fetch<cr>
 nmap <leader>ga :action Git.Branches<cr>
 nmap <leader>gp :action Git.Pull<cr>
@@ -140,12 +145,14 @@ nmap <leader>ca :action ProblemsView.QuickFixes<cr>
 nmap <leader>ca :action ShowIntentionActions<cr>
 nmap <C-f> :action ReformatCode<cr>
 vmap <leader>ra :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>ra :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
 nmap <leader>re :action RenameElement<cr>
 nmap <leader>ge :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
 nmap @ :action EditorSplitLine<cr>
 nmap # kJl
+vmap <leader>so :action SurroundWith<cr>
 
 " Introduce Refactorings
 nmap <leader>iv :action IntroduceVariable<cr>
@@ -158,7 +165,6 @@ nmap <leader>ec :action InspectCode<cr>
 
 " VCS operations
 nmap <leader>ya :action Annotate<cr>
-nmap <leader>yl :action Vcs.Show.Log<cr>
 nmap <leader>yd :action Compare.LastVersion<cr>
 nmap <leader>yP :action Git.Pull<cr>
 nmap <leader>yr :action Git.ResolveConflicts<cr>
