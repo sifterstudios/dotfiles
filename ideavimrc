@@ -23,10 +23,10 @@ nnoremap <C-t> :action GotoHarpoon2<cr>
 nnoremap <C-n> :action GotoHarpoon3<cr>
 nnoremap <C-s> :action GotoHarpoon4<cr>
 
-nnoremap <A-h> :action SetHarpoon1<cr>
-nnoremap <A-t> :action SetHarpoon2<cr>
-nnoremap <A-n> :action SetHarpoon3<cr>
-nnoremap <A-s> :action SetHarpoon4<cr>
+nmap <A-h> :action SetHarpoon1<cr>
+nmap <A-t> :action SetHarpoon2<cr>
+nmap <A-n> :action SetHarpoon3<cr>
+nmap <A-s> :action SetHarpoon4<cr>
 
 " Emulated plugins
 set quickscope
@@ -116,6 +116,7 @@ nmap <leader>t :action GotoTest<cr>
 nmap <leader>B :action ShowBookmarks<cr>
 
 " Useful Git actions
+nmap <leader>gl :action Vcs.Show.Log<cr>
 nmap <leader>gf :action Git.Fetch<cr>
 nmap <leader>ga :action Git.Branches<cr>
 nmap <leader>gp :action Git.Pull<cr>
@@ -140,6 +141,7 @@ nmap <leader>ca :action ProblemsView.QuickFixes<cr>
 nmap <leader>ca :action ShowIntentionActions<cr>
 nmap <C-f> :action ReformatCode<cr>
 vmap <leader>ra :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>ra :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
 nmap <leader>re :action RenameElement<cr>
 nmap <leader>ge :action Generate<cr>
@@ -158,7 +160,6 @@ nmap <leader>ec :action InspectCode<cr>
 
 " VCS operations
 nmap <leader>ya :action Annotate<cr>
-nmap <leader>yl :action Vcs.Show.Log<cr>
 nmap <leader>yd :action Compare.LastVersion<cr>
 nmap <leader>yP :action Git.Pull<cr>
 nmap <leader>yr :action Git.ResolveConflicts<cr>
