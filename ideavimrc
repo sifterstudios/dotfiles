@@ -71,6 +71,10 @@ nmap q :action CloseContent<cr>
 nmap <leader>q :action CloseAllUnmodifiedEditors<cr>
 nmap <leader>Q :action ReopenClosedTab<cr>
 
+" Tab navigation
+nmap ! :action NextTab<cr>
+nmap + :action PreviousTab<cr>
+
 " To navigate between split panes
 nmap <leader>sl :action NextSplitter<cr>
 nmap <leader>sh :action PrevSplitter<cr>
@@ -87,7 +91,7 @@ nmap <leader>sU :action UnsplitAll<cr>
 nmap <leader>se :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
-map ! :NERDTree<CR>
+map <A-S-1> :NERDTree<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
 
@@ -148,6 +152,7 @@ nmap <leader>ge :action Generate<cr>
 nmap <leader>eI :action OptimizeImports<cr>
 nmap @ :action EditorSplitLine<cr>
 nmap # kJl
+vmap <leader>so :action SurroundWith<cr>
 
 " Introduce Refactorings
 nmap <leader>iv :action IntroduceVariable<cr>
