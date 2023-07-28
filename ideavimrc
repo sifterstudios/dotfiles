@@ -82,6 +82,9 @@ nmap <leader>Q :action ReopenClosedTab<cr>
 nmap ! :action NextTab<cr>
 nmap + :action PreviousTab<cr>
 
+" Pin tab
+nmap <leader>in :action PinActiveTabToggle<cr>
+
 " To navigate between split panes
 nmap <leader>sl :action NextSplitter<cr>
 nmap <leader>sh :action PrevSplitter<cr>
@@ -101,6 +104,9 @@ nmap <leader>se :action OpenEditorInOppositeTabGroup<cr>
 map <A-S-1> :NERDTree<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
+
+" SCRATCH FILE"
+nmap <leader>sc :action NewScratchFile<cr>
 
 " Alt+j/k for autocompletion popup
 inoremap <A-j> <C-n>

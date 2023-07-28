@@ -8,7 +8,7 @@ fi
 # . $HOME/.config/scripts/z
 export PATH=$PATH:$HOME/picom
 export ZSH="$HOME/.oh-my-zsh"
-export GOPATH=$HOME/go
+export GOPATH=$HOME/dev/personal/go/
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
 export PATH="$PATH:$HOME/flutter/bin"
@@ -31,6 +31,8 @@ export VISUAL=/usr/bin/nvim
 alias lss='ls -lAFh'
 alias luamake=$HOME/.config/lsp/lua-language-server/3rd/luamake/luamake
 alias android-studio=$HOME/Applications/android-studio/bin/studio.sh
+alias ts=tmux-sessionizer
+
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -48,15 +50,6 @@ mkcd () {
 caps () {
   setxkbmap -option ctrl:nocaps && xcape -e 'Control_L=Escape'
 }
-
-ga () {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
