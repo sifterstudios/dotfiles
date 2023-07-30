@@ -9,14 +9,14 @@ set modeline
 set modelines=2
 set showmode
 set clipboard+=unnamed
+set ideajoin
+set multiple-cursors
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_primary_color = '#4ba88a'
 let g:qs_secondary_color = '#4cb88b'
-" TODO: todo-window
 
 " Harpoon
 nnoremap <C-e> :action ShowHarpoon<cr>
-nnoremap <A-e> :action AddToHarpoon<cr>
 
 nnoremap <C-h> :action GotoHarpoon1<cr>
 nnoremap <C-t> :action GotoHarpoon2<cr>
@@ -49,22 +49,10 @@ nnoremap <leader>p :action $Paste<cr>
 " Copy whole file
 nnoremap <leader>Y ggVG:action $Copy<cr>
 
-" Use Idea to join lines smartly
-set ideajoin
-
-" Multiple cursor support
-set multiple-cursors
-
 let mapleader = " "
-" Map semicolon to colon to not have to use Shift. Lazy dev.
-nmap ; :
 
 " Collapse and expand
 nmap za :action ExpandCollapseToggleAction<cr>
-
-" These create newlines like o and O but stay in normal mode
-nmap <leader>nj o<Esc>k
-nmap <leader>nk O<Esc>j
 
 " Copilot
 map <C-<cr>> :action copilot.applyInlays<cr>
@@ -73,32 +61,25 @@ map <leader>cC :action copilot.disableCopilot<cr>
 map <leader>cn :action copilot.cycleNextInlays<cr>
 map <leader>cp :action copilot.cyclePrevInlays<cr>
 
-" Closing tabs
-nmap q :action CloseContent<cr>
-nmap <leader>q :action CloseAllUnmodifiedEditors<cr>
+" Handling tabs
+nmap <leader>bp :action PinActiveTabToggle<cr>
+nmap <leader>bP :action CloseAllUnmodifiedEditors<cr>
 nmap <leader>Q :action ReopenClosedTab<cr>
 
 " Tab navigation
-nmap ! :action NextTab<cr>
-nmap + :action PreviousTab<cr>
+nmap L :action NextTab<cr>
+nmap H :action PreviousTab<cr>
 
-" Pin tab
-nmap <leader>in :action PinActiveTabToggle<cr>
-
-" To navigate between split panes
-nmap <leader>sl :action NextSplitter<cr>
-nmap <leader>sh :action PrevSplitter<cr>
-
-" Full screen window
+" Full screen window, not sure if it's needed
 nmap <C-w>o :action HideAllWindows<cr>
 nmap <C-w><C-o> :action HideAllWindows<cr>
 
 " Splits manipulation
-nmap <leader>si :action SplitHorizontally<cr>
-nmap <leader>s- :action SplitVertically<cr>
-nmap <leader>su :action Unsplit<cr>
-nmap <leader>sU :action UnsplitAll<cr>
-nmap <leader>se :action OpenEditorInOppositeTabGroup<cr>
+nmap <leader>w| :action SplitHorizontally<cr>
+nmap <leader>w- :action SplitVertically<cr>
+nmap <leader>wu :action Unsplit<cr>
+nmap <leader>wU :action UnsplitAll<cr>
+nmap <leader>we :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
 map <A-S-1> :NERDTree<CR>
@@ -113,15 +94,14 @@ inoremap <A-j> <C-n>
 inoremap <A-k> <C-p>
 
 " Navigation
-" nmap <Space-Space> :action ViewNavigationBar<cr> " Not working currently
 nmap <BS> :action Back<cr>
 nmap <S-BS> :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
 nmap <leader>u :action ShowUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
-nmap <leader>f :action GotoFile<cr>
+nmap <leader><leader> :action GotoFile<cr>
 nmap <leader>b :action ToggleBookmark<cr>
-nmap <leader>; :action FileStructurePopup<cr>
+nmap <leader>ss :action FileStructurePopup<cr>
 nmap <leader>M :action ActivateStructureToolWindow<cr>
 nmap <leader>d :action ShowErrorDescription<cr>
 nmap <leader>i :action GotoImplementation<cr>
@@ -198,8 +178,8 @@ nmap gcc :action CommentByLineComment<cr>
 
 " Search
 nmap / :action Find<cr>
-vmap <leader>/ :action SelectAllOccurrences<cr>
-nmap <leader>? :action FindInPath<cr>
+vmap <leader>? :action SelectAllOccurrences<cr>
+nmap <leader>/ :action FindInPath<cr>
 vmap <leader>no :action SelectNextOccurrence<cr>
 vmap <leader>po :action SelectPreviousOccurrence<cr>
 
