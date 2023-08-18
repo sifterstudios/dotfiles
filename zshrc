@@ -17,7 +17,7 @@ export PATH="$PATH:$HOME/Applications/android/cmdline-tools/8.0/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export ANDROID_HOME="/usr/lib/android-sdk/"
+export ANDROID_HOME="$HOME/android-sdk/"
 export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
 export PATH=$HOME/Applications/android/emulator:$PATH
 export PATH=$HOME/Applications/android/platform-tools:$PATH

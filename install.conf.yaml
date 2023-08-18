@@ -1,4 +1,4 @@
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.vimrc: vimrc
@@ -19,42 +19,45 @@
     ~/.config/ulauncher/extensions.json: config/ulauncher/extensions.json
     ~/.config/ulauncher/settings.json: config/ulauncher/settings.json
     ~/.config/ulauncher/shortcuts.json: config/ulauncher/shortcuts.json
+    ~/.devilspie/maximize.ds:
+      path: devilspie/maximize.ds
+      create: true
     ~/.vim/colors:
-        path: vim/colors/
-        create: true
+      path: vim/colors/
+      create: true
     ~/.config/i3:
-        path: config/i3/
-        create: true
+      path: config/i3/
+      create: true
     ~/.config/kitty:
-        path: config/kitty/
-        create: true
+      path: config/kitty/
+      create: true
     ~/.config/dconf:
-        path: config/dconf/
-        create: true
+      path: config/dconf/
+      create: true
     ~/.config/nvim:
-        path: config/nvim/
-        create: true
+      path: config/nvim/
+      create: true
     ~/.config/rofi:
-        path: config/rofi/
-        create: true
+      path: config/rofi/
+      create: true
     ~/.config/picom:
-        path: config/picom/
-        create: true
+      path: config/picom/
+      create: true
     ~/.config/espanso:
-        path: config/espanso/
-        create: true
+      path: config/espanso/
+      create: true
     ~/.config/neofetch:
-        path: config/neofetch/
-        create: true
+      path: config/neofetch/
+      create: true
     ~/.config/pop-shell:
-        path: config/pop-shell/
-        create: true
+      path: config/pop-shell/
+      create: true
     ~/.config/scripts:
-        path: config/scripts/
-        create: true
+      path: config/scripts/
+      create: true
     ~/.config/polybar:
-        path: config/polybar/
-        create: true
+      path: config/polybar/
+      create: true
     ~/.config/ttyper:
-        path: config/ttyper/
-        create: true
+      path: config/ttyper/
+      create: true

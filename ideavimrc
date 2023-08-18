@@ -11,9 +11,18 @@ set showmode
 set clipboard+=unnamed
 set ideajoin
 set multiple-cursors
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_primary_color = '#4ba88a'
-let g:qs_secondary_color = '#4cb88b'
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" <C-n> seems to me as a better solution than <M-n>,
+" but we should finally support vim-visual-multi because vim-multiple-cursors is deprecated now
+map <C-n> <Plug>NextWholeOccurrence
+
+set showmode
+set so=5
+set incsearch
+set nu
+set ideajoin
+set ideastatusicon=gray
 
 " Harpoon
 nnoremap <C-e> :action ShowHarpoon<cr>
@@ -39,6 +48,8 @@ set easymotion
 set which-key
 set notimeout
 Plug 'preservim/nerdtree'
+
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 
 " Copy to system clipboard
 vnoremap <leader>y :action $Copy<cr>
@@ -99,16 +110,16 @@ nmap <S-BS> :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
 nmap <leader>u :action ShowUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
-nmap <leader><leader> :action GotoFile<cr>
+nmap <space><space> :action GotoFile<cr>
 nmap <leader>b :action ToggleBookmark<cr>
 nmap <leader>ss :action FileStructurePopup<cr>
 nmap <leader>M :action ActivateStructureToolWindow<cr>
-nmap <leader>d :action ShowErrorDescription<cr>
+nmap <leader>cd :action ShowErrorDescription<cr>
 nmap <leader>i :action GotoImplementation<cr>
 nmap <leader>U :action GotoSuperMethod<cr>
 nmap <leader>I :action SelectInProjectView<cr>
-nmap <leader>. :action RecentFiles<cr>
-nmap <leader>a :action RecentChangedFiles<cr>
+nmap <leader>< :action RecentFiles<cr>
+nmap <leader>, :action RecentChangedFiles<cr>
 nmap <leader>t :action GotoTest<cr>
 nmap <leader>B :action ShowBookmarks<cr>
 
@@ -136,7 +147,7 @@ nmap <leader>O :action GotoPreviousError<cr>
 " Refactorings
 nmap <leader>ca :action ProblemsView.QuickFixes<cr>
 nmap <leader>ca :action ShowIntentionActions<cr>
-nmap <C-f> :action ReformatCode<cr>
+nmap <leader>cf :action ReformatCode<cr>
 vmap <leader>ra :action Refactorings.QuickListPopupAction<cr>
 nmap <leader>ra :action Refactorings.QuickListPopupAction<cr>
 vmap <leader>em :action ExtractMethod<cr>
@@ -165,12 +176,18 @@ nmap <leader>yo :action Github.Open.In.Browser<cr>
 
 " Terminal
 nmap <leader><cr> :action ActivateTerminalToolWindow<cr>
+nmap <C-/> :action com.sburlyaev.cmd.plugin.actions.OpenTerminal<cr>
+
+" Make C-u and C-d center cursor
+map <C-u> <C-u>zz
+map <C-d> <C-d>zz
 
 " Maven
 nmap <leader>G :action ActivateMavenToolWindow<cr>
 
 " External nvim
 nmap <leader>v :action Tool_External Tools_nvim<cr>
+nmap <A-/> :action Tool_External Tools_lazygit<cr>
 
 " Won't work in visual mode (with vmap for some reason.
 " Use default map of <c-/> for that.
@@ -203,7 +220,7 @@ nmap <leader>rc :action RunClass<cr>
 nmap <leader>rd :action DebugClass<cr>
 nmap <leader>rt :action RerunTests<cr>
 nmap <leader>rf :action RerunFailedTests<cr>
-nmap <leader>bp :action ToggleLineBreakpoint<cr>
+nmap <leader>db :action ToggleLineBreakpoint<cr>
 nmap <C-k> :action ParameterInfo<cr>
 vmap <C-k> :action ParameterInfo<cr>
 imap <C-k> :action ParameterInfo<cr>
