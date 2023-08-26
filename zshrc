@@ -6,10 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 # . $HOME/.config/scripts/z
+
 export PATH=$PATH:$HOME/picom
 export ZSH="$HOME/.oh-my-zsh"
-export GOPATH=$HOME/dev/personal/go/
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOPATH=$HOME/dev/
+export PATH=$PATH:$HOME/go/bin:$GOPATH/bin
 export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
 export PATH="$PATH:$HOME/flutter/bin"
 export PATH="$PATH:/snap/bin"
@@ -40,6 +41,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 source $ZSH/oh-my-zsh.sh
 
 
+[ -f ~/.forgit/forgit.plugin.zsh ] && source ~/.forgit/forgit.plugin.zsh
 
 # FUNCTIONS
 
