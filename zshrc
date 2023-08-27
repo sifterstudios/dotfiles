@@ -25,8 +25,8 @@ export PATH=$HOME/Applications/android/platform-tools:$PATH
 export PATH=$HOME/.config/scripts:$PATH
 export PATH=$PATH:$HOME/.local/bin
 export DOTNET_ROOT=/snap/dotnet-sdk/current
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=/usr/local/bin/nvim
 
 # ALIASES
 alias lss='ls -lAFh'
