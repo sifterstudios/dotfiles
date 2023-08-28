@@ -22,7 +22,6 @@ set so=5
 set incsearch
 set nu
 set ideajoin
-set ideastatusicon=gray
 =======
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:qs_primary_color = '#4ba88a'
@@ -62,7 +61,7 @@ vnoremap <leader>p :action $Paste<cr>
 nnoremap <leader>p :action $Paste<cr>
 
 " Copy whole file
-nnoremap <leader>Y ggVG:action $Copy<cr>
+nnoremap <leader>Y ggVGy
 
 let mapleader = " "
 
@@ -115,7 +114,9 @@ nmap <leader>L :action RecentLocations<cr>
 nmap <leader>u :action ShowUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
 
-nmap <leader><leader> :action GotoFile<cr>
+nmap <leader><space> :action GotoFile<cr>
+
+nmap <leader>fr :action RenameFile<cr>
 
 nmap <leader>b :action ToggleBookmark<cr>
 nmap <leader>ss :action FileStructurePopup<cr>

@@ -13,6 +13,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.bash_logout: bash_logout
     ~/.ideavimrc: ideavimrc
+    ~/.obsidian.vimrc: obsidian.vimrc
     ~/.config/yakuakerc: config/yakuakerc
     ~/.config/kglobalshortcutsrc: config/kglobalshortcutsrc
     ~/.config/VSCodium/User/settings.json: config/VSCodium/User/settings.json
