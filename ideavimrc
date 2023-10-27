@@ -10,8 +10,8 @@ set modelines=2
 set showmode
 set clipboard+=unnamed
 set ideajoin
+
 set multiple-cursors
-let g:argtextobj_pairs="[:],(:),<:>"
 
 " <C-n> seems to me as a better solution than <M-n>,
 " but we should finally support vim-visual-multi because vim-multiple-cursors is deprecated now
@@ -89,7 +89,7 @@ nmap <C-w>o :action HideAllWindows<cr>
 nmap <C-w><C-o> :action HideAllWindows<cr>
 
 " Splits manipulation
-nmap <leader>w| :action SplitHorizontally<cr>
+nmap <leader>wi :action SplitHorizontally<cr>
 nmap <leader>w- :action SplitVertically<cr>
 nmap <leader>wu :action Unsplit<cr>
 nmap <leader>wU :action UnsplitAll<cr>
@@ -114,7 +114,8 @@ nmap <leader>L :action RecentLocations<cr>
 nmap <leader>u :action ShowUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
 
-nmap <leader><space> :action GotoFile<cr>
+nmap <space><space> :action GotoFile<cr>
+nmap ! :action CloseContent<cr>
 
 nmap <leader>fr :action RenameFile<cr>
 
@@ -134,7 +135,7 @@ nmap <leader>B :action ShowBookmarks<cr>
 nmap <leader>gl :action Vcs.Show.Log<cr>
 nmap <leader>gf :action Git.Fetch<cr>
 nmap <leader>ga :action Git.Branches<cr>
-nmap <leader>gp :action Git.Pull<cr>
+nmap <leader>gp :action Vcs.UpdateProject<cr>
 nmap <leader>gu :action Git.Push<cr>
 nmap <leader>gr :action Git.Rebase<cr>
 nmap <leader>gm :action Git.Merge<cr>
