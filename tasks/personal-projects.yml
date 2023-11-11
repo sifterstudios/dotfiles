@@ -1,7 +1,7 @@
 - name: bitbucket-notifier exists
   stat:
     path: "{{ personal }}/bitbucket-notifier"
-  register: bitbucket-notifier
+  register: bitbucket_notifier
   tags:
     - install
     - dotfiles
@@ -17,4 +17,4 @@
     - dotfiles
     - neovim
     - personal-project
-  when: bitbucket-notifier.stat.exists == False
+  when: bitbucket_notifier.stat.exists == False
