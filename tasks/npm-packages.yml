@@ -33,4 +33,11 @@
   tags:
     - install
     - node
+- name: Install TS-Node
+  npm:
+    name: js-debug-adapter
+    global: yes
+  tags:
+    - neovim
+    - install
 

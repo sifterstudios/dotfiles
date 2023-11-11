@@ -26,4 +26,5 @@
     - include: tasks/dotfiles.yml
     - include: tasks/apt.yml
     - include: tasks/lsp.yml
+    - include: tasks/pip.yml
 

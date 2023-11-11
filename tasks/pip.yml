@@ -1,0 +1,4 @@
+- name: Install debugpy
+  ansible.builtin.pip:
+    name: debugpy
+  tags: neovim
