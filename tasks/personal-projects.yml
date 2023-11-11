@@ -1,0 +1,20 @@
+- name: bitbucket-notifier exists
+  stat:
+    path: "{{ personal }}/bitbucket-notifier"
+  register: bitbucket-notifier
+  tags:
+    - install
+    - dotfiles
+    - neovim
+    - personal-project
+- name: Personal Project bitbucket-notifier
+  ansible.builtin.git:
+    repo: 'git@github.com:sifterstudios/bitbucket-notifier.git'
+    bare: false
+    dest: "{{ personal }}/bitbucket-notifier"
+  tags:
+    - install
+    - dotfiles
+    - neovim
+    - personal-project
+  when: bitbucket-notifier.stat.exists == False
