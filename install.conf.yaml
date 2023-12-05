@@ -16,10 +16,6 @@
     ~/.obsidian.vimrc: obsidian.vimrc
     ~/.config/yakuakerc: config/yakuakerc
     ~/.config/kglobalshortcutsrc: config/kglobalshortcutsrc
-    ~/.config/VSCodium/User/settings.json: config/VSCodium/User/settings.json
-    ~/.config/ulauncher/extensions.json: config/ulauncher/extensions.json
-    ~/.config/ulauncher/settings.json: config/ulauncher/settings.json
-    ~/.config/ulauncher/shortcuts.json: config/ulauncher/shortcuts.json
     ~/.devilspie/maximize.ds:
       path: devilspie/maximize.ds
       create: true
@@ -31,9 +27,6 @@
       create: true
     ~/.config/kitty:
       path: config/kitty/
-      create: true
-    ~/.config/dconf:
-      path: config/dconf/
       create: true
     ~/.config/nvim:
       path: config/nvim/
