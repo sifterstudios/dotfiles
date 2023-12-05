@@ -3,6 +3,7 @@
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     personal: "{{ lookup('env', 'HOME') }}/dev/me"
+    ansible_python_interpreter: /usr/bin/python3
   pre_tasks:
   - name: Update Apt
     become: true
@@ -15,6 +16,7 @@
       - core
   tasks:
     - include: tasks/ssh.yml
+      delegate_to: localhost
     - include: tasks/git-setup.yml
     - include: tasks/core-setup.yml
     - include: tasks/node-setup.yml
@@ -24,7 +26,10 @@
     - include: tasks/nvim-setup.yml
     - include: tasks/debugger.yml
     - include: tasks/dotfiles.yml
+    - include: tasks/hist-cli.yml
     - include: tasks/apt.yml
     - include: tasks/lsp.yml
     - include: tasks/pip.yml
+    - include: tasks/languages.yml
+
 

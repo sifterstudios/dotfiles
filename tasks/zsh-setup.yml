@@ -8,7 +8,7 @@
   shell: chsh -s $(which zsh)
   tags: *tags_for_zsh_tasks
 
-- name: Check that the somefile.conf exists
+- name: Check if oh-my-zsh exists
   stat:
     path: /home/sifter/.oh-my-zsh
   register: oh_my_stats
@@ -18,6 +18,18 @@
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer && chmod +x ~/.oh-my-installer && ~/.oh-my-installer
   tags: *tags_for_zsh_tasks
   when: oh_my_stats.stat.exists == False
+  become_user: sifter
+
+- name: Check if powerlevel10k exists
+  stat:
+    path: /home/sifter/.oh-my-zsh/custom/themes/powerlevel10k
+  register: powerlevel10k
+  tags: *tags_for_zsh_tasks
+
+- name: powerlevel10k
+  shell: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  tags: *tags_for_zsh_tasks
+  when: powerlevel10k.stat.exists == false
   become_user: sifter
 
 - name: Install zsh-autosuggestions

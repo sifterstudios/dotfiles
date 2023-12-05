@@ -1,0 +1,15 @@
+- name: Install Python3
+  become: yes
+  apt:
+    name: python3
+    state: present
+- name: Install Python3 virtual environment
+  become: yes
+  apt:
+    name: python3-venv
+    state: present
+- name: Install Snapd
+  become: yes
+  ansible.builtin.package:
+    name: snapd
+    state: present

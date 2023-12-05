@@ -9,10 +9,29 @@
   tags:
     - install
     - dotfiles
-    - stow
+- name: Delete .zshrc
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.zshrc"
+    state: absent
+- name: Delete .bashrc
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.bashrc"
+    state: absent
+- name: Delete .profile
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.profile"
+    state: absent
+- name: Delete .bash_logout
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.bash_logout"
+    state: absent
 - name: Do the dotbot!
   shell: cd $HOME/.dotfiles && ./install
+  register: dotbot_results
+  changed_when: false
   tags:
     - install
     - dotfiles
-    - stow
+- name: Display Dotbot Output
+  debug:
+    var: dotbot_results.stdout_lines

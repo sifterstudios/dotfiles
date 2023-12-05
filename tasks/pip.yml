@@ -2,3 +2,6 @@
   ansible.builtin.pip:
     name: debugpy
   tags: neovim
+- name: Install pexpect
+  ansible.builtin.pip:
+    name: pexpect
