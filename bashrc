@@ -127,3 +127,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 . "$HOME/.cargo/env"
 alias config='/usr/bin/git --git-dir=/home/sifter/.cfg/ --work-tree=/home/sifter'
+
+alias luamake="/home/sifter/dev/me/sumneko/3rd/luamake/luamake"
