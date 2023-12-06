@@ -38,8 +38,13 @@
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags: *tags_for_zsh_tasks
 
-- name: Change default shell to zsh
-  shell: chsh /usr/bin/zsh
+- name: Set default shell to Zsh for the user
+  become: true
+  user:
+    name: sifter
+    shell: /usr/bin/zsh
 
 - name: Source .zshrc
-  shell: source ~/.zshrc
+  become: true
+  command: "source ~/.zshrc"
+  become_user: sifter
