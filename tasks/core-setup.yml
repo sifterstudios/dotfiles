@@ -10,7 +10,7 @@
 - name: Install System Packages 2 (lua, unzip, libtool, libtool-bin, gettext)
   become: true
   apt:
-    name: [ "lua5.1", "unzip", "libtool", "libtool-bin", "gettext"]
+    name: ["lua5.1", "unzip", "libtool", "libtool-bin", "gettext"]
   tags:
     - install
     - neovim
@@ -19,7 +19,19 @@
 - name: Install System Packages 3 (the rest)
   become: true
   apt:
-    name: [ "curl", "btop", "golang", "lsof", "ccache", "ninja-build", "python3-pip", "moreutils", "clangd", "ripgrep"]
+    name:
+      [
+        "curl",
+        "btop",
+        "golang",
+        "lsof",
+        "ccache",
+        "ninja-build",
+        "python3-pip",
+        "moreutils",
+        "clangd",
+        "ripgrep",
+      ]
   tags:
     - install
     - core
@@ -32,3 +44,21 @@
     - install
     - neovim
     - core
+- name: Get lazygit version from Github API
+  command: "curl -s 'https://api.github.com/repos/jesseduffield/lazygit/releases/latest' | grep -Po '\"tag_name\": \"v\\K[^\"]*'"
+  register: lazygit_version
+- name: Download lazygit archive
+  command: "curl -Lo lazygit.tar.gz 'https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_{{ lazygit_version.stdout }}_Linux_x86_64.tar.gz'"
+  args:
+    chdir: "/tmp"
+
+- name: Extract Lazygit archive
+  command: "tar xf lazygit.tar.gz lazygit"
+  args:
+    chdir: "/tmp"
+
+- name: Install lazygit
+  become: true
+  command: "install lazygit /usr/local/bin/"
+  args:
+    chdir: "/tmp"

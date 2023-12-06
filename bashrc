@@ -129,3 +129,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 alias config='/usr/bin/git --git-dir=/home/sifter/.cfg/ --work-tree=/home/sifter'
 
 alias luamake="/home/sifter/dev/me/sumneko/3rd/luamake/luamake"
+
+# fnm
+export PATH="/home/sifter/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# fnm
+export PATH="/home/sifter/.local/share/fnm:$PATH"
+eval "`fnm env`"

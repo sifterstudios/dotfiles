@@ -9,8 +9,6 @@ fi
 
 export PATH=$PATH:$HOME/picom
 export ZSH="$HOME/.oh-my-zsh"
-export GOPATH=$HOME/dev/
-export PATH=$PATH:$HOME/go/bin:$GOPATH/bin
 export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
 export PATH="$PATH:$HOME/flutter/bin"
 export PATH="$PATH:/snap/bin"
@@ -34,6 +32,10 @@ alias luamake=$HOME/.config/lsp/lua-language-server/3rd/luamake/luamake
 alias android-studio=$HOME/Applications/android-studio/bin/studio.sh
 alias ts=tmux-sessionizer
 
+# fnm
+export PATH="/home/sifter/.local/share/fnm:$PATH"
+eval "`fnm env`"  # fnm
+eval "$(fnm env --use-on-cd)"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
