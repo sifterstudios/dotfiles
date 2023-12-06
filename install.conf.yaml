@@ -7,7 +7,6 @@
     ~/.gitconfig: gitconfig
     ~/.p10k.zsh: p10k.zsh
     ~/.profile: profile
-    ~/.xprofile: xprofile
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
     ~/.tmux.conf: tmux.conf
