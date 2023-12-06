@@ -1,7 +1,9 @@
 - name: Install packages
   become: true
   apt:
-    name: [ "tmux", "fzf", "gimp", "xclip", "screenkey", "tldr", "ripgrep"] 
+    name: ["tmux", "fzf", "gimp", "xclip", "screenkey", "tldr", "ripgrep"]
   tags:
     - install
     - productivity
+- name: Install tmux plugin manager
+  shell: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
