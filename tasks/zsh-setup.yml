@@ -37,14 +37,3 @@
     repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags: *tags_for_zsh_tasks
-
-- name: Set default shell to Zsh for the user
-  become: true
-  user:
-    name: sifter
-    shell: /usr/bin/zsh
-
-- name: Source .zshrc
-  become: true
-  command: "source ~/.zshrc"
-  become_user: sifter
