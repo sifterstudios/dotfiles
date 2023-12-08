@@ -33,7 +33,7 @@ alias android-studio=$HOME/Applications/android-studio/bin/studio.sh
 alias ts=tmux-sessionizer
 
 # fnm
-export PATH="/home/sifter/.local/share/fnm:$PATH"
+export PATH=$HOME/.local/share/fnm:$PATH
 eval "`fnm env`"  # fnm
 eval "$(fnm env --use-on-cd)"
 
@@ -64,3 +64,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval $(thefuck --alias)
+
+# fnm
+export PATH="/home/vagrant/.local/share/fnm:$PATH"
+eval "`fnm env`"
