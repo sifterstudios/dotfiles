@@ -1,0 +1,35 @@
+- name: Install ZSH
+  homebrew:
+    name: zsh
+  tags: &tags_for_zsh_tasks ["install", "productivity", "dotfiles", "zsh"]
+
+- name: Check if oh-my-zsh exists
+  ansible.builtin.stat:
+    path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
+  register: oh_my_stats
+  tags: *tags_for_zsh_tasks
+
+- name: Oh-My-Zsh
+  ansible.builtin.shell:
+    cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  tags: *tags_for_zsh_tasks
+  when: oh_my_stats.stat.exists == false
+
+- name: Check if powerlevel10k exists
+  ansible.builtin.stat:
+    path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/themes/powerlevel10k/"
+  register: powerlevel10k
+  tags: *tags_for_zsh_tasks
+
+- name: powerlevel10k
+  ansible.builtin.command:
+    cmd: "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git {{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/themes/powerlevel10k/"
+  tags: *tags_for_zsh_tasks
+  when: powerlevel10k.stat.exists == false
+
+- name: Install zsh-autosuggestions
+  ansible.builtin.git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/plugins/zsh-autosuggestions"
+  tags: *tags_for_zsh_tasks
+

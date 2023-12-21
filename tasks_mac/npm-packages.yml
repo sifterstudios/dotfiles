@@ -1,0 +1,35 @@
+- name: Install Yarn
+  ansible.builtin.command:
+    cmd: npm install -g yarn
+  tags:
+    - install
+    - node
+
+- name: Install eslint
+  ansible.builtin.command:
+    cmd: npm install -g eslint
+  tags:
+    - install
+    - node
+
+- name: Install Typescript server
+  ansible.builtin.command:
+    cmd: npm install -g typescript-language-server
+  tags:
+    - install
+    - node
+
+- name: Install Typescript
+  ansible.builtin.command:
+    cmd: npm install -g typescript
+  tags:
+    - install
+    - node
+
+- name: Install TS-Node
+  ansible.builtin.command:
+    cmd: npm install -g ts-node
+  tags:
+    - install
+    - node
+

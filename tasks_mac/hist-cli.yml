@@ -1,0 +1,6 @@
+- name: Required libraries for hist-cli for (cargo package)
+  homebrew:
+    name: ["freetype"]
+  tags:
+    - hist
+    - install

@@ -1,0 +1,21 @@
+- hosts: localhost
+  vars:
+    source_key: "./.ssh/id_ed25519"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    personal: "{{ lookup('env', 'HOME') }}/dev/me"
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - include_tasks: tasks_mac/ssh.yml
+    - include_tasks: tasks_mac/core-setup.yml
+    - include_tasks: tasks_mac/node-setup.yml
+    - include_tasks: tasks_mac/npm-packages.yml
+    - include_tasks: tasks_mac/zsh-setup.yml
+    - include_tasks: tasks_mac/personal-projects.yml
+    - include_tasks: tasks_mac/nvim-setup.yml
+    - include_tasks: tasks_mac/debugger.yml
+    - include_tasks: tasks_mac/dotfiles.yml
+    - include_tasks: tasks_mac/hist-cli.yml
+    - include_tasks: tasks_mac/lsp.yml
+    - include_tasks: tasks_mac/pip.yml
+    - include_tasks: tasks_mac/languages.yml
+

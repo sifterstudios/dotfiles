@@ -1,0 +1,4 @@
+- name: Install Python3 virtual environment
+  homebrew:
+    name: pyenv
+    state: present

@@ -1,0 +1,6 @@
+- name: Install packages
+  homebrew:
+    name: ["tmux", "fzf", "gimp", "xclip", "screen", "tldr", "ripgrep, tpm"]
+  tags:
+    - install
+    - productivity

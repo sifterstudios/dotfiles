@@ -1,0 +1,38 @@
+- name: Ensure .ssh directory exists.
+  ansible.builtin.file:
+    dest: "{{ dest_key | dirname }}"
+    mode: '0700'
+    state: directory
+  tags:
+    - dotfiles
+    - install
+    - ssh
+
+- name: Install ssh key
+  ansible.builtin.copy:
+    src: "{{ source_key }}"
+    dest: "{{ dest_key }}"
+    mode: '0600'
+  tags:
+    - dotfiles
+    - install
+    - ssh
+
+- name: Install ssh key public
+  ansible.builtin.copy:
+    src: "{{ source_key }}.pub"
+    dest: "{{ dest_key }}.pub"
+    mode: '0644'
+  tags:
+    - dotfiles
+    - install
+    - ssh
+
+- name: Set authorized key taken from file
+  ansible.builtin.authorized_key:
+    user: "{{ lookup('env', 'USER') }}"
+    state: present
+    key: "{{ lookup('file', '{{ dest_key }}.pub') }}"
+  with_fileglob:
+    - "{{ lookup('env', 'HOME') }}/.ssh/*.pub"
+

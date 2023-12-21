@@ -1,0 +1,36 @@
+- name: Install Node.js and npm
+  homebrew:
+    name: ["node"]
+  tags:
+    - install
+    - node
+
+- name: npmjs prefix
+  ansible.builtin.command:
+    cmd: mkdir -p ~/.local/.npm-global
+  tags:
+    - install
+    - node
+
+- name: Add npmjs to path
+  ansible.builtin.command:
+    cmd: "echo 'export PATH=~/.local/.npm-global/bin:$PATH' >> ~/.zshrc"  # or ~/.bashrc if you use Bash
+  tags:
+    - install
+    - node
+
+- name: npmjs global settings
+  ansible.builtin.command:
+    cmd: "npm config set prefix '~/.local/.npm-global'"
+  tags:
+    - install
+    - node
+
+- name: npmjs global settings export path in case I don't have dotfiles installed
+  ansible.builtin.command:
+    cmd: "echo 'export PATH=~/.local/.npm-global/bin:$PATH' >> ~/.zshrc"  # or ~/.bashrc if you use Bash
+  tags:
+    - install
+    - node
+    - npm-path
+

@@ -1,0 +1,43 @@
+- name: Install System Packages 1 (build-essential, cmake, pkg-config, pthread)
+  homebrew:
+    name: ["cmake", "pkg-config", "libpthread-stubs"]
+  tags:
+    - install
+    - neovim
+    - core
+
+- name: Install System Packages 2 (lua, unzip, libtool, libtool-bin, gettext)
+  homebrew:
+    name: ["lua", "unzip", "libtool", "gettext"]
+  tags:
+    - install
+    - neovim
+    - core
+
+- name: Install System Packages 3 (the rest)
+  homebrew:
+    name:
+      [
+        "curl",
+        "btop",
+        "go",
+        "lsof",
+        "ccache",
+        "ninja",
+        "python@3.8",
+        "moreutils",
+        "ripgrep",
+        "lazygit",
+      ]
+  tags:
+    - install
+    - core
+
+- name: Install Clang
+  homebrew:
+    name: ["llvm"]
+  tags:
+    - install
+    - neovim
+    - core
+
