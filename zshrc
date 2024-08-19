@@ -21,6 +21,7 @@ export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
 export PATH=$HOME/Applications/android/emulator:$PATH
 export PATH=$HOME/Applications/android/platform-tools:$PATH
 export PATH=$HOME/.config/scripts:$PATH
+export PATH=$HOME/go/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
 export DOTNET_ROOT=/snap/dotnet-sdk/current
 export EDITOR=/usr/local/bin/nvim
@@ -50,11 +51,6 @@ source $ZSH/oh-my-zsh.sh
 mkcd () {
   mkdir -p "$@" && cd "$_"
 }
-
-caps () {
-  setxkbmap -option ctrl:nocaps && xcape -e 'Control_L=Escape'
-}
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
