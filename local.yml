@@ -5,15 +5,15 @@
     personal: "{{ lookup('env', 'HOME') }}/dev/me"
     ansible_python_interpreter: /usr/bin/python3
   pre_tasks:
-  - name: Update Apt
-    become: true
-    apt:
-      force_apt_get: true
-      update_cache: true
-      state: present
-    tags:
-      - install
-      - core
+    - name: Update Apt
+      become: true
+      apt:
+        force_apt_get: true
+        update_cache: true
+        state: present
+      tags:
+        - install
+        - core
   tasks:
     - include_tasks: tasks/ssh.yml
     - include_tasks: tasks/git-setup.yml
@@ -21,7 +21,6 @@
     - include_tasks: tasks/node-setup.yml
     - include_tasks: tasks/npm-packages.yml
     - include_tasks: tasks/zsh-setup.yml
-    - include_tasks: tasks/personal-projects.yml
     - include_tasks: tasks/nvim-setup.yml
     - include_tasks: tasks/debugger.yml
     - include_tasks: tasks/dotfiles.yml
@@ -30,5 +29,3 @@
     - include_tasks: tasks/lsp.yml
     - include_tasks: tasks/pip.yml
     - include_tasks: tasks/languages.yml
-
-
