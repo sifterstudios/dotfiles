@@ -54,3 +54,9 @@
     ~/.config/ttyper:
       path: config/ttyper/
       create: true
+    ~/.config/yabai:
+      path: config/yabai/
+      create: true
+    ~/.config/skhd:
+      path: config/skhd/
+      create: true

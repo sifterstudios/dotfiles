@@ -1,0 +1,43 @@
+- name: Remove neovim
+  ansible.builtin.command:
+    cmd: rm -rf ~/neovim
+  tags:
+    - install
+    - neovim
+
+- name: Clone Neovim
+  ansible.builtin.git:
+    repo: 'https://github.com/neovim/neovim.git'
+    dest: "{{ lookup('env', 'HOME') }}/neovim"
+  tags:
+    - install
+    - neovim
+
+- name: Build neovim
+  ansible.builtin.shell:
+    cmd: "cd {{ lookup('env', 'HOME') }}/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo"
+  tags:
+    - install
+    - neovim
+
+- name: Install neovim
+  ansible.builtin.shell:
+    cmd: "cd {{ lookup('env', 'HOME') }}/neovim && sudo make install"
+  tags:
+    - install
+    - neovim
+
+- name: Neovim Plugin Development 1
+  ansible.builtin.command:
+    cmd: brew install luarocks
+  tags:
+    - install
+    - neovim
+
+- name: Neovim Plugin Development 2 luacheck
+  ansible.builtin.shell:
+    cmd: luarocks install luacheck
+  tags:
+    - install
+    - neovim
+

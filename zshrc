@@ -26,6 +26,7 @@ export PATH=$PATH:$HOME/.local/bin
 export DOTNET_ROOT=/snap/dotnet-sdk/current
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
+export PATH=$PATH:$HOME/.pub-cache/bin
 
 # ALIASES
 alias lss='ls -lAFh'
@@ -60,3 +61,17 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval $(thefuck --alias)
+
+# fnm
+export PATH="/home/vagrant/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# fnm
+export PATH="/home/sifter/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/tormod.liseth/.dart-cli-completion/zsh-config.zsh ]] && . /Users/tormod.liseth/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
