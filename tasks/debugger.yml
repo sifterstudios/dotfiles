@@ -16,7 +16,7 @@
   when: node_debugger.stat.exists == False
 
 - name: Debugger npm i and build JavaScript
-  shell: cd {{ personal }}/microsoft-sucks/vscode-js-debug && npm i && npm run build
+  shell: cd {{ personal }}/microsoft-sucks/vscode-js-debug && npm i && npm run compile
   tags:
     - install
     - debugger
