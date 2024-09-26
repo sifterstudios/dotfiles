@@ -1,7 +1,7 @@
 - name: Install debugpy
-  ansible.builtin.pip:
+  community.general.pipx:
     name: debugpy
   tags: neovim
 - name: Install pexpect
-  ansible.builtin.pip:
+  community.general.pipx:
     name: pexpect
