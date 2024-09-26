@@ -27,5 +27,4 @@
     - include_tasks: tasks/hist-cli.yml
     - include_tasks: tasks/apt.yml
     - include_tasks: tasks/lsp.yml
-    - include_tasks: tasks/pip.yml
     - include_tasks: tasks/languages.yml
