@@ -1,11 +1,19 @@
+- name: Check for already cloned .dotfiles
+  stat:
+    path: "{{ lookup('env', 'HOME') }}/.dotfiles"
+  register: dotfiles
+  tags:
+    - install
+    - dotfiles
 - name: Cloning .dotfiles
   ansible.builtin.git:
-    repo: 'git@github.com:sifterstudios/dotfiles.git'
+    repo: "git@github.com:sifterstudios/dotfiles.git"
     dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
     recursive: yes
     update: yes
     accept_hostkey: yes
     version: main
+  when: dotfiles.stat.exists == False
   tags:
     - install
     - dotfiles
