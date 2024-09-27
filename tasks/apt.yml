@@ -5,5 +5,10 @@
   tags:
     - install
     - productivity
+- name: Check for tmux plugin manager
+  stat:
+    path: "~/.tmux/plugins/tpm/"
+  register: tpm
 - name: Install tmux plugin manager
   shell: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  when: tpm.stat.exists == False
