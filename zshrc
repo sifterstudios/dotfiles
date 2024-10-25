@@ -27,6 +27,8 @@ export DOTNET_ROOT=/snap/dotnet-sdk/current
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 export PATH=$PATH:$HOME/.pub-cache/bin
+export PATH="$PATH:/Users/tormod.liseth/Library/Python/3.9/bin"
+export FLUTTER_ROOT="$(asdf where flutter)"
 
 # ALIASES
 alias lss='ls -lAFh'
@@ -43,7 +45,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 source $ZSH/oh-my-zsh.sh
-
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 [ -f ~/.forgit/forgit.plugin.zsh ] && source ~/.forgit/forgit.plugin.zsh
 
