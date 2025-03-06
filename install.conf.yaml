@@ -13,6 +13,7 @@
     ~/.bash_logout: bash_logout
     ~/.ideavimrc: ideavimrc
     ~/.obsidian.vimrc: obsidian.vimrc
+    ~/.tool-versions: tool-versions
     ~/.config/yakuakerc: config/yakuakerc
     ~/.config/kglobalshortcutsrc: config/kglobalshortcutsrc
     ~/.devilspie/maximize.ds:
@@ -59,4 +60,7 @@
       create: true
     ~/.config/skhd:
       path: config/skhd/
+      create: true
+    ~/.config/nix-darwin:
+      path: config/nix-darwin/
       create: true

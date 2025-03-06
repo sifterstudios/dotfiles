@@ -1,12 +1,46 @@
-yabay -m config layout bsp
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# .. more yabai startup stuff
+yabai -m config layout bsp
 
 yabai -m config window_placement second_child
 
-yabai -m config top_padding 12
-yabai -m config bottom_padding 12
-yabai -m config left_padding 12
-yabai -m config right_padding 12
-yabai -m config window_gap 12
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
+yabai -m config auto_balance off
+yabai -m config split_ratio 0.5
+yabai -m config window_shadow off
+
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 5)'); do
+  yabai -m space --destroy 6
+done
+
+function setup_space {
+  local idx="$1"
+  local name="$2"
+  local space=
+  echo "setup space $idx : $name"
+
+  space=$(yabai -m query --spaces --space "$idx")
+  if [ -z "$space" ]; then
+    yabai -m space --create
+  fi
+
+  yabai -m space "$idx" --label "$name"
+}
+
+setup_space 1 code
+setup_space 2 web
+setup_space 3 social
+setup_space 4 media
+setup_space 5 other
 
 yabai -m config mouse_follows_focus on
 yabai -m config mouse_modifier alt
@@ -18,5 +52,37 @@ yabai -m mouse_drop_action swap
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Yoink$" manage=off
+yabai -m rule --add app="^Amphetamine$" manage=off
 
-osascript -e 'tell application id "tracesOf.Uebersicht" to refresh'
+yabai -m rule --add app="^Ghostty$" space=^1
+yabai -m rule --add app="^Cursor$" space=^1
+yabai -m rule --add app="^Warp$" space=^1
+yabai -m rule --add app="^kitty$" space=^1
+yabai -m rule --add app="^Rider$" space=^1
+yabai -m rule --add app="^RustRover$" space=^1
+yabai -m rule --add app="^Xcode$" space=^1
+yabai -m rule --add app="^Visual Studio Code$" space=^1
+yabai -m rule --add app="^WebStorm$" space=^1
+yabai -m rule --add app="^Safari$" space=^2
+yabai -m rule --add app="^Firefox$" space=^2
+yabai -m rule --add app="^Vivaldi$" space=^2
+yabai -m rule --add app="^Brave Browser$" space=^2
+yabai -m rule --add app="^Google Chrome$" space=^2
+yabai -m rule --add app="^Arc$" space=^2
+yabai -m rule --add app="^Slack$" space=^3
+yabai -m rule --add app="^Discord$" space=^3
+yabai -m rule --add app="^Messages$" space=^3
+yabai -m rule --add app="^FaceTime$" space=^3
+yabai -m rule --add app="^Teams$" space=^3
+yabai -m rule --add app="^Mail$" space=^3
+yabai -m rule --add app="^Spark$" space=^3
+yabai -m rule --add app="^Music$" space=4
+yabai -m rule --add app="^VLC$" space=4
+yabai -m rule --add app="^Spotify$" space=4
+yabai -m rule --add app="^Cyberduck$" space=5
+yabai -m rule --add app="^Postman$" space=5
+yabai -m rule --add app="^Obsidian$" space=5
+yabai -m rule --add app="^TextEdit$" space=5
+yabai -m rule --add app="^Notes$" space=5
+yabai -m rule --add app="^Godot$" space=5
