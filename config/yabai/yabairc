@@ -59,16 +59,16 @@ yabai -m rule --add app="^Ghostty$" space=^1
 yabai -m rule --add app="^Cursor$" space=^1
 yabai -m rule --add app="^Warp$" space=^1
 yabai -m rule --add app="^kitty$" space=^1
-yabai -m rule --add app="^Rider$" space=^1
+yabai -m rule --add app="^Jetbrains Rider$" space=^1
 yabai -m rule --add app="^RustRover$" space=^1
 yabai -m rule --add app="^Xcode$" space=^1
-yabai -m rule --add app="^Visual Studio Code$" space=^1
+yabai -m rule --add app="^Code$" space=^1
 yabai -m rule --add app="^WebStorm$" space=^1
 yabai -m rule --add app="^Safari$" space=^2
 yabai -m rule --add app="^Firefox$" space=^2
 yabai -m rule --add app="^Vivaldi$" space=^2
 yabai -m rule --add app="^Brave Browser$" space=^2
-yabai -m rule --add app="^Google Chrome$" space=^2
+yabai -m rule --add app="^Chrome$" space=^2
 yabai -m rule --add app="^Arc$" space=^2
 yabai -m rule --add app="^Slack$" space=^3
 yabai -m rule --add app="^Discord$" space=^3
