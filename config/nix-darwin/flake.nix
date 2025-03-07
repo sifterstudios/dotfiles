@@ -18,7 +18,6 @@
 	pkgs.rustup
 	pkgs.vscode
 	pkgs.cyberduck
-	pkgs.karabiner-elements
 	pkgs.hidden-bar
 	pkgs.warp-terminal
 	pkgs.android-tools
@@ -68,6 +67,7 @@
 	brews = [
 	"asdf"
 	"mas"
+          "opam"
           "rust-analyzer"
 	];
 	casks = [
@@ -80,6 +80,7 @@
 	"jetbrains-toolbox"
 	"flutter"
 	"android-commandlinetools"
+          "karabiner-elements"
 	];
         masApps = {
           "xCode" = 497799835;
