@@ -74,8 +74,11 @@ yabai -m rule --add app="^Slack$" space=^3
 yabai -m rule --add app="^Discord$" space=^3
 yabai -m rule --add app="^Messages$" space=^3
 yabai -m rule --add app="^FaceTime$" space=^3
-yabai -m rule --add app="^Teams$" space=^3
+yabai -m rule --add app="^Microsoft Teams$" space=^3
 yabai -m rule --add app="^Mail$" space=^3
+yabai -m rule --add app="^Calendar$" space=^3
+yabai -m rule --add app="^Planner$" space=^3
+yabai -m rule --add app="^Mailbird$" space=^3
 yabai -m rule --add app="^Spark$" space=^3
 yabai -m rule --add app="^Music$" space=4
 yabai -m rule --add app="^VLC$" space=4

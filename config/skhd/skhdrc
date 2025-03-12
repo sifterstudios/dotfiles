@@ -58,9 +58,17 @@ shift + alt - 7 : yabai -m window --space 7;
 # Reload yabai
 ctrl + alt + cmd - r : yabai --restart-service
 
+# Space focus for external keyboard
 alt - u : yabai -m space --focus 1
 alt - e : yabai -m space --focus 2
 alt - o : yabai -m space --focus 3
 alt - a : yabai -m space --focus 4
 alt - i : yabai -m space --focus 5
 
+# # Space focus for  builtin keyboard
+# option - f : yabai -m space --focus 1
+# option - d : yabai -m space --focus 2
+# option - s : yabai -m space --focus 3
+# option - a : yabai -m space --focus 4
+# option - g : yabai -m space --focus 5
+#
