@@ -89,6 +89,7 @@
             "flutter"
             "android-commandlinetools"
             "karabiner-elements"
+            "mailbird"
           ];
           masApps = {
             "xCode" = 497799835;
