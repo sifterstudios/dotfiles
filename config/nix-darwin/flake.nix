@@ -77,6 +77,7 @@
             "opam"
             "rustup"
             "rust"
+            "libffi"
           ];
           casks = [
             "alfred"
