@@ -96,7 +96,7 @@ nmap <leader>wU :action UnsplitAll<cr>
 nmap <leader>we :action OpenEditorInOppositeTabGroup<cr>
 
 " NERDtree
-map <A-S-1> :NERDTree<CR>
+nmap - :NERDTree<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
 
