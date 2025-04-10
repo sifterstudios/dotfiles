@@ -16,7 +16,6 @@
         environment.systemPackages = [
           pkgs.neovim
           pkgs.gh
-          pkgs.yabai
           pkgs.jetbrains.webstorm
           pkgs.jetbrains.rust-rover
           pkgs.jetbrains.rider
@@ -33,7 +32,6 @@
           pkgs.yarn
           pkgs.ruby
           pkgs.llvm
-          pkgs.skhd
           pkgs.thefuck
           pkgs.postman
           pkgs.spotify
@@ -78,6 +76,19 @@
             "rustup"
             "rust"
             "libffi"
+            "blueutil"
+          ];
+          taps = [
+            {
+              name = "koekeishiya/yabai";
+              clone_target = "git@github.com:koekeishiya/yabai.git";
+              force_auto_update = true;
+            }
+            {
+              name = "koekeishiya/skhd";
+              clone_target = "git@github.com:koekeishiya/skhd.git";
+              force_auto_update = true;
+            }
           ];
           casks = [
             "alfred"
