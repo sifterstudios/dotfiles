@@ -66,6 +66,7 @@
           pkgs.zsh-powerlevel10k
           pkgs.zsh-autosuggestions
           pkgs.jq
+          pkgs.docker
         ];
         homebrew = {
           enable = true;
@@ -77,18 +78,9 @@
             "rust"
             "libffi"
             "blueutil"
+            "azure-cli"
           ];
           taps = [
-            {
-              name = "koekeishiya/yabai";
-              clone_target = "git@github.com:koekeishiya/yabai.git";
-              force_auto_update = true;
-            }
-            {
-              name = "koekeishiya/skhd";
-              clone_target = "git@github.com:koekeishiya/skhd.git";
-              force_auto_update = true;
-            }
           ];
           casks = [
             "alfred"
@@ -102,6 +94,7 @@
             "android-commandlinetools"
             "karabiner-elements"
             "mailbird"
+            "nikitabobko/tap/aerospace"
           ];
           masApps = {
             "xCode" = 497799835;
@@ -135,11 +128,6 @@
           NSGlobalDomain.KeyRepeat = 2;
           ".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
           controlcenter.BatteryShowPercentage = true;
-        };
-
-        services = {
-          yabai.enable = true;
-          skhd.enable = true;
         };
 
         fonts.packages = [

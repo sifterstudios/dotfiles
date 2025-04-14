@@ -14,6 +14,7 @@
     ~/.ideavimrc: ideavimrc
     ~/.obsidian.vimrc: obsidian.vimrc
     ~/.tool-versions: tool-versions
+    ~/.aerospace.toml: aerospace.toml
     ~/.config/yakuakerc: config/yakuakerc
     ~/.config/kglobalshortcutsrc: config/kglobalshortcutsrc
     ~/.devilspie/maximize.ds:
