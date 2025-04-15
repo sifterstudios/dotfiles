@@ -95,6 +95,7 @@
             "karabiner-elements"
             "mailbird"
             "nikitabobko/tap/aerospace"
+            "azure-data-studio"
           ];
           masApps = {
             "xCode" = 497799835;
