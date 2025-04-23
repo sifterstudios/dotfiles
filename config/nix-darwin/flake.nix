@@ -37,7 +37,6 @@
           pkgs.spotify
           pkgs.discord
           pkgs.slack
-          pkgs.ansible
           pkgs.obsidian
           pkgs.kitty
           pkgs.tmux
@@ -79,6 +78,7 @@
             "libffi"
             "blueutil"
             "azure-cli"
+            "ansible"
           ];
           taps = [
           ];
@@ -105,6 +105,7 @@
             "Amphetamine" = 937984704;
             "Spark Classic" = 1176895641;
             "ColorSlurp" = 1287239339;
+            "Excalidrawz" = 6636493997;
           };
           onActivation.cleanup = "zap";
           onActivation.autoUpdate = true;

@@ -7,13 +7,12 @@ export PATH=$PATH:$HOME/picom
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
 export PATH="$PATH:/snap/bin"
-export PATH=$HOME/.asdf/shims/:$PATH
 # export PATH=$HOME/Applications/android/emulator:$PATH
 # export PATH=$HOME/Applications/android/platform-tools:$PATH
 export PATH=$HOME/.config/scripts:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
-export DOTNET_ROOT=/snap/dotnet-sdk/current
+export PATH=$PATH:$HOME/.dotnet
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 export PATH=$PATH:$HOME/.pub-cache/bin
@@ -26,11 +25,8 @@ alias ts=tmux-sessionizer
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-
 source $ZSH/oh-my-zsh.sh
-
-[ -f ~/.forgit/forgit.plugin.zsh ] && source ~/.forgit/forgit.plugin.zsh
-
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 mkcd () {
   mkdir -p "$@" && cd "$_"
@@ -47,13 +43,7 @@ eval $(thefuck --alias)
 
 
 
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
 [[ ! -r '/Users/sifter/.opam/opam-init/init.zsh' ]] || source '/Users/sifter/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-# END opam configuration
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/sifter/.docker/completions $fpath)
 autoload -Uz compinit
