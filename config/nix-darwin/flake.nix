@@ -55,7 +55,6 @@
           pkgs.lsof
           pkgs.ccache
           pkgs.ninja
-          pkgs.python3
           pkgs.moreutils
           pkgs.lazygit
           pkgs.asdf
@@ -79,6 +78,7 @@
             "blueutil"
             "azure-cli"
             "ansible"
+            "python"
           ];
           taps = [
           ];
