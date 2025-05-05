@@ -16,6 +16,7 @@ export PATH=$PATH:$HOME/.dotnet
 export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 export PATH=$PATH:$HOME/.pub-cache/bin
+export PATH=$PATH:$HOME/Library/Android/sdk/
 
 # ALIASES
 alias lss='ls -lAFh'

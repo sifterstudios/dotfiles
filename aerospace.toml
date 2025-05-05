@@ -313,6 +313,10 @@ if.app-name-regex-substring = 'Obsidian'
 run = ['move-node-to-workspace other']
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Motion'
+run = ['move-node-to-workspace other']
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'TextEdit'
 run = ['move-node-to-workspace other']
 
