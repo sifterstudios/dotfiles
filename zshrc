@@ -42,6 +42,20 @@ eval $(thefuck --alias)
 [[ -f /Users/tormod.liseth/.dart-cli-completion/zsh-config.zsh ]] && . /Users/sifter/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+nixie() {
+  local oldpwd="$PWD"
+  cd ~/.dotfiles/config/nix-darwin || return 1
+
+  echo "==> Updating flake..."
+  nix flake update
+
+  echo "==> Rebuilding system with darwin-rebuild..."
+  sudo darwin-rebuild switch --flake ~/.dotfiles/config/nix-darwin#m4
+
+  sudo nix-collect-garbage -d
+
+  cd "$oldpwd" || return 1
+}
 
 
 [[ ! -r '/Users/sifter/.opam/opam-init/init.zsh' ]] || source '/Users/sifter/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null

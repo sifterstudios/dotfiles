@@ -11,6 +11,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, mac-app-util }:
     let
       configuration = { pkgs, ... }: {
+        system.primaryUser = "sifter"; # ← Add this line
         # List packages installed in system profile. To search by name, run: # $ nix-env -qaP | grep wget 
         nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
@@ -78,7 +79,6 @@
             "blueutil"
             "azure-cli"
             "ansible"
-            "python"
           ];
           taps = [
           ];
