@@ -11,7 +11,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, mac-app-util }:
     let
       configuration = { pkgs, ... }: {
-        system.primaryUser = "sifter"; # ← Add this line
+        system.primaryUser = "sifter";
         # List packages installed in system profile. To search by name, run: # $ nix-env -qaP | grep wget 
         nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
@@ -96,6 +96,7 @@
             "mailbird"
             "nikitabobko/tap/aerospace"
             "azure-data-studio"
+            "mac-mouse-fix"
           ];
           masApps = {
             "xCode" = 497799835;
