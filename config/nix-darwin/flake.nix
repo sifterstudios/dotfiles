@@ -15,11 +15,7 @@
         # List packages installed in system profile. To search by name, run: # $ nix-env -qaP | grep wget 
         nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
-          pkgs.neovim
           pkgs.gh
-          pkgs.jetbrains.webstorm
-          pkgs.jetbrains.rust-rover
-          pkgs.jetbrains.rider
           pkgs.firefox
           pkgs.flutter
           pkgs.kotlin
@@ -33,11 +29,10 @@
           pkgs.yarn
           pkgs.ruby
           pkgs.llvm
-          pkgs.thefuck
+          pkgs.pay-respects
           pkgs.postman
           pkgs.spotify
           pkgs.discord
-          pkgs.slack
           pkgs.obsidian
           pkgs.kitty
           pkgs.tmux
@@ -70,6 +65,7 @@
         homebrew = {
           enable = true;
           brews = [
+            "cocoapods"
             "asdf"
             "mas"
             "opam"
@@ -79,10 +75,18 @@
             "blueutil"
             "azure-cli"
             "ansible"
+            "ninja"
+            "libtool"
+            "automake"
+            "cmake"
+            "pkg-config"
+            "gettext"
+            "curl"
           ];
           taps = [
           ];
           casks = [
+            "slack"
             "alfred"
             "ghostty"
             "vlc"

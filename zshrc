@@ -17,12 +17,14 @@ export EDITOR=/usr/local/bin/nvim
 export VISUAL=/usr/local/bin/nvim
 export PATH=$PATH:$HOME/.pub-cache/bin
 export PATH=$PATH:$HOME/Library/Android/sdk/
+export PATH="$HOME/.local/neovim/bin:$PATH"
 
 # ALIASES
 alias lss='ls -lAFh'
 alias luamake=$HOME/.config/lsp/lua-language-server/3rd/luamake/luamake
 alias android-studio=$HOME/Applications/android-studio/bin/studio.sh
 alias ts=tmux-sessionizer
+alias nvup="~/.config/scripts/nvim-update.sh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -36,8 +38,7 @@ mkcd () {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval $(thefuck --alias)
-
+eval "$(pay-respects zsh)"
 
 [[ -f /Users/tormod.liseth/.dart-cli-completion/zsh-config.zsh ]] && . /Users/sifter/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
@@ -64,3 +65,11 @@ fpath=(/Users/sifter/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# pnpm
+export PNPM_HOME="/Users/sifter/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
