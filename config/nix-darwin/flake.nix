@@ -101,6 +101,8 @@
             "nikitabobko/tap/aerospace"
             "azure-data-studio"
             "mac-mouse-fix"
+            "ukelele"
+            "qmk-toolbox"
           ];
           masApps = {
             "xCode" = 497799835;
