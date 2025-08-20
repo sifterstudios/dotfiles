@@ -40,7 +40,6 @@
           pkgs.ripgrep
           pkgs.brave
           pkgs.google-chrome
-          pkgs.arc-browser
           pkgs.cmake
           pkgs.unzip
           pkgs.libtool
@@ -72,6 +71,7 @@
             "rustup"
             "rust"
             "libffi"
+            "java"
             "blueutil"
             "azure-cli"
             "ansible"
