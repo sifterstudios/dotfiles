@@ -16,30 +16,17 @@
         nixpkgs.config.allowUnfree = true;
         environment.systemPackages = [
           pkgs.gh
-          pkgs.firefox
           pkgs.flutter
           pkgs.kotlin
-          pkgs.vscode
-          pkgs.cyberduck
-          pkgs.hidden-bar
-          pkgs.warp-terminal
           pkgs.android-tools
-          pkgs.code-cursor
           pkgs.git-lfs
           pkgs.yarn
           pkgs.ruby
           pkgs.llvm
           pkgs.pay-respects
-          pkgs.postman
-          pkgs.spotify
-          pkgs.discord
-          pkgs.obsidian
-          pkgs.kitty
           pkgs.tmux
           pkgs.fzf
           pkgs.ripgrep
-          pkgs.brave
-          pkgs.google-chrome
           pkgs.cmake
           pkgs.unzip
           pkgs.libtool
@@ -66,6 +53,7 @@
           brews = [
             "cocoapods"
             "asdf"
+            "heroku"
             "mas"
             "opam"
             "rustup"
@@ -86,6 +74,19 @@
           taps = [
           ];
           casks = [
+            "google-chrome"
+            "brave-browser"
+            "dotnet"
+            "obsidian"
+            "discord"
+            "postman"
+            "cursor"
+            "warp"
+            "cyberduck"
+            "hiddenbar"
+            "visual-studio-code"
+            "firefox"
+            "spotify"
             "slack"
             "alfred"
             "ghostty"
@@ -135,7 +136,6 @@
           NSGlobalDomain.AppleICUForce24HourTime = true;
           NSGlobalDomain.AppleInterfaceStyle = "Dark";
           NSGlobalDomain.KeyRepeat = 2;
-          ".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
           controlcenter.BatteryShowPercentage = true;
         };
 

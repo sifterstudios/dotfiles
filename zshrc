@@ -43,20 +43,40 @@ eval "$(pay-respects zsh)"
 [[ -f /Users/tormod.liseth/.dart-cli-completion/zsh-config.zsh ]] && . /Users/sifter/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+
 nixie() {
-  local oldpwd="$PWD"
-  cd ~/.dotfiles/config/nix-darwin || return 1
+  emulate -L zsh
+  setopt pipefail nounset err_return
 
-  echo "==> Updating flake..."
-  nix flake update
+  local oldpwd=$PWD
+  {
+    cd ~/.dotfiles/config/nix-darwin || return
 
-  echo "==> Rebuilding system with darwin-rebuild..."
-  sudo darwin-rebuild switch --flake ~/.dotfiles/config/nix-darwin#m4
+    echo "==> Updating flake..."
+    nix flake update
 
-  sudo nix-collect-garbage -d
+    echo "==> Rebuilding system with darwin-rebuild..."
+    sudo darwin-rebuild switch --flake ~/.dotfiles/config/nix-darwin#m4
 
-  cd "$oldpwd" || return 1
+    echo "==> Pruning old generations (system)..."
+    sudo nix-env -p /nix/var/nix/profiles/system --delete-generations 30d || true
+
+    echo "==> Pruning old generations (user)..."
+    nix profile wipe-history --older-than 30d || true
+
+    echo "==> Collecting garbage (user)..."
+    nix-collect-garbage -d || true
+
+    echo "==> Collecting garbage (root)..."
+    sudo nix-collect-garbage -d || true
+
+    echo "==> Optimising store (hardlink dedupe)..."
+    sudo nix store optimise || true
+  } always {
+    cd "$oldpwd"
+  }
 }
+
 
 
 [[ ! -r '/Users/sifter/.opam/opam-init/init.zsh' ]] || source '/Users/sifter/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
